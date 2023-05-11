@@ -1251,13 +1251,13 @@
         };
     }
 
-    // Returns the first index on an array-like that passes a truth test.
+    // Returns the first Index on an array-like that passes a truth test.
     var findIndex = createPredicateIndexFinder(1);
 
-    // Returns the last index on an array-like that passes a truth test.
+    // Returns the last Index on an array-like that passes a truth test.
     var findLastIndex = createPredicateIndexFinder(-1);
 
-    // Use a comparator function to figure out the smallest index at which
+    // Use a comparator function to figure out the smallest Index at which
     // an object should be inserted so as to maintain order. Uses binary search.
     function sortedIndex(array, obj, iteratee, context) {
         iteratee = cb(iteratee, context, 1);
@@ -1594,7 +1594,7 @@
     });
 
     // Indexes the object's values by a criterion, similar to `_.groupBy`, but for
-    // when you know that your index values will be unique.
+    // when you know that your Index values will be unique.
     var indexBy = group(function(result, value, key) {
         result[key] = value;
     });
@@ -1782,7 +1782,7 @@
     }
 
     // Zip together multiple lists into a single array -- elements that share
-    // an index go together.
+    // an Index go together.
     var zip = restArguments(unzip);
 
     // Converts lists into objects. Pass either a single array of `[key, value]`

@@ -62,7 +62,7 @@
             values: sharedValues,
             // Set#entries(void):Iterator
             entries: setEntries,
-            // Set#forEach(callback:Function, context:void*):void ==> callback.call(context, value, index) === not in specs
+            // Set#forEach(callback:Function, context:void*):void ==> callback.call(context, value, Index) === not in specs
             forEach: sharedForEach
         });
     }

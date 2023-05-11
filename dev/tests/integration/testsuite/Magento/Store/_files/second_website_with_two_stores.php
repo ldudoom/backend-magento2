@@ -52,7 +52,7 @@ if (!$store->load('fixture_third_store', 'code')->getId()) {
     $store->save();
 }
 
-/* Refresh CatalogSearch index */
+/* Refresh CatalogSearch Index */
 /** @var \Magento\Framework\Indexer\IndexerRegistry $indexerRegistry */
 $indexerRegistry = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()
     ->create(\Magento\Framework\Indexer\IndexerRegistry::class);

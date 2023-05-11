@@ -78,7 +78,7 @@ class CategoryLinkManagementTest extends TestCase
     }
 
     /**
-     * Assert that product correctly assigned to category and index table contain indexed data.
+     * Assert that product correctly assigned to category and Index table contain indexed data.
      *
      * @magentoDataFixture Magento/Catalog/_files/second_product_simple.php
      * @magentoDataFixture Magento/Catalog/_files/category.php
@@ -98,7 +98,7 @@ class CategoryLinkManagementTest extends TestCase
     }
 
     /**
-     * Assert that product correctly unassigned from category and index table not contain indexed data.
+     * Assert that product correctly unassigned from category and Index table not contain indexed data.
      *
      * @magentoDataFixture Magento/Catalog/_files/product_with_category.php
      *
@@ -117,7 +117,7 @@ class CategoryLinkManagementTest extends TestCase
     }
 
     /**
-     * Assert that product correctly assigned to category and index table contain index data.
+     * Assert that product correctly assigned to category and Index table contain Index data.
      *
      * @magentoDataFixture Magento/Catalog/_files/second_product_simple.php
      * @magentoDataFixture Magento/Catalog/_files/categories_no_products.php
@@ -137,7 +137,7 @@ class CategoryLinkManagementTest extends TestCase
     }
 
     /**
-     * Assert that product correctly unassigned from category and index table doesn't contain index data.
+     * Assert that product correctly unassigned from category and Index table doesn't contain Index data.
      *
      * @magentoDataFixture Magento/Catalog/_files/product_simple_with_category_which_has_parent_category.php
      *
@@ -199,7 +199,7 @@ class CategoryLinkManagementTest extends TestCase
     }
 
     /**
-     * Return count of products which added to index table with all provided category ids.
+     * Return count of products which added to Index table with all provided category ids.
      *
      * @param int $productId
      * @param array $categoryIds

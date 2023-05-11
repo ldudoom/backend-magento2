@@ -83,7 +83,7 @@ class TextTest extends \PHPUnit\Framework\TestCase
         return [
             [
                 [
-                    'index' => 'title',
+                    'Index' => 'title',
                     'translate' => true
                 ],
                 [
@@ -93,7 +93,7 @@ class TextTest extends \PHPUnit\Framework\TestCase
             ],
             [
                 [
-                    'index' => 'title'
+                    'Index' => 'title'
                 ],
                 [
                     'title' => 'Doesn\'t need to be translated'

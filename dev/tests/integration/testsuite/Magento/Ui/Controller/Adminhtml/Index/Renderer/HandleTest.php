@@ -30,7 +30,7 @@ class HandleTest extends \Magento\TestFramework\TestCase\AbstractBackendControll
         $this->getRequest()->setParam('sorting%5Bfield%5D', 'entity_id');
         $this->getRequest()->setParam('paging%5BpageSize%5D', 20);
         $this->getRequest()->setParam('isAjax', 1);
-        $this->dispatch('backend/mui/index/render_handle');
+        $this->dispatch('backend/mui/Index/render_handle');
         $output = $this->getResponse()->getBody();
         $this->assertEmpty($output, 'The acl restriction wasn\'t applied properly');
     }
@@ -45,7 +45,7 @@ class HandleTest extends \Magento\TestFramework\TestCase\AbstractBackendControll
         $this->getRequest()->setParam('sorting%5Bfield%5D', 'entity_id');
         $this->getRequest()->setParam('paging%5BpageSize%5D', 20);
         $this->getRequest()->setParam('isAjax', 1);
-        $this->dispatch('backend/mui/index/render_handle');
+        $this->dispatch('backend/mui/Index/render_handle');
         $output = $this->getResponse()->getBody();
         $this->assertNotEmpty($output, 'The acl restriction wasn\'t applied properly');
     }

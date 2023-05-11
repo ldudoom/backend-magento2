@@ -11,7 +11,7 @@ namespace Magento\Indexer\Controller\Adminhtml;
 class IndexerTest extends \Magento\TestFramework\TestCase\AbstractBackendController
 {
     /**
-     * Assert that current page is index management page and that it has indexers mode selector
+     * Assert that current page is Index management page and that it has indexers mode selector
      *
      * @return void
      */
@@ -33,7 +33,7 @@ class IndexerTest extends \Magento\TestFramework\TestCase\AbstractBackendControl
     }
 
     /**
-     * Assert that index management contains a certain number of indexers
+     * Assert that Index management contains a certain number of indexers
      *
      * @return void
      */

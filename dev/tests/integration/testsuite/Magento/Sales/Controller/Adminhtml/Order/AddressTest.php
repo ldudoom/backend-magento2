@@ -58,7 +58,7 @@ class AddressTest extends AbstractBackendController
     public function testWithNotExistingAddressId(): void
     {
         $this->dispatchWithAddressId(51728);
-        $this->assertRedirect($this->stringContains('backend/sales/order/index/'));
+        $this->assertRedirect($this->stringContains('backend/sales/order/Index/'));
     }
 
     /**

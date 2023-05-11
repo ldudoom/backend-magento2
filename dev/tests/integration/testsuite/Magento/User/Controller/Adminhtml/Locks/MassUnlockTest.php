@@ -13,7 +13,7 @@ namespace Magento\User\Controller\Adminhtml\Locks;
 class MassUnlockTest extends \Magento\TestFramework\TestCase\AbstractBackendController
 {
     /**
-     * Test index action
+     * Test Index action
      *
      * @magentoDbIsolation enabled
      * @magentoDataFixture Magento/User/_files/locked_users.php

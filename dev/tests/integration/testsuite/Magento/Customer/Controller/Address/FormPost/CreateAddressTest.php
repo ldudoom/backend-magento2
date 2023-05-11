@@ -358,13 +358,13 @@ class CreateAddressTest extends AbstractController
 
     /**
      * Check that save address request performed successfully
-     * (proper success message and redirect to customer/address/index are appear).
+     * (proper success message and redirect to customer/address/Index are appear).
      *
      * @return void
      */
     private function checkRequestPerformedSuccessfully(): void
     {
-        $this->assertRedirect($this->stringContains('customer/address/index'));
+        $this->assertRedirect($this->stringContains('customer/address/Index'));
         $this->assertSessionMessages(
             $this->equalTo([(string)__('You saved the address.')]),
             MessageInterface::TYPE_SUCCESS

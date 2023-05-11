@@ -61,7 +61,7 @@ class RegisterFormKeyFromCookieTest extends TestCase
         $_COOKIE['form_key'] = $formKey;
         $this->request->setMethod(HttpRequest::METHOD_POST);
         $this->request->setParam('form_key', $formKey);
-        $this->request->setRequestUri('core/index/index');
+        $this->request->setRequestUri('core/Index/Index');
         $this->frontController->dispatch($this->request);
         $this->assertTrue($this->formKeyValidator->validate($this->request));
     }

@@ -105,7 +105,7 @@ class DeleteAddressTest extends AbstractController
         $currentCustomerAddress = reset($customerAddresses);
         $this->customerSession->setCustomerId($customer->getId());
         $this->performAddressDeleteRequest();
-        $this->assertRedirect($this->stringContains('customer/address/index'));
+        $this->assertRedirect($this->stringContains('customer/address/Index'));
         $customer = $this->customerRepository->get('customer@example.com');
         $this->assertCount(1, $customer->getAddresses() ?? []);
         $this->checkAddressWasntDeleted((int)$currentCustomerAddress->getId());
@@ -171,13 +171,13 @@ class DeleteAddressTest extends AbstractController
 
     /**
      * Check that delete address request performed successfully
-     * (proper success message and redirect to customer/address/index are appear).
+     * (proper success message and redirect to customer/address/Index are appear).
      *
      * @return void
      */
     private function checkRequestPerformedSuccessfully(): void
     {
-        $this->assertRedirect($this->stringContains('customer/address/index'));
+        $this->assertRedirect($this->stringContains('customer/address/Index'));
         $this->assertSessionMessages(
             $this->equalTo([(string)__('You deleted the address.')]),
             MessageInterface::TYPE_SUCCESS

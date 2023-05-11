@@ -407,7 +407,7 @@ console output. The following command line shows you how to store the generated
 code in a new JavaScript file that can be included in your project:
 
 ```sh
-tmpl.js index.html > tmpl.js
+tmpl.js Index.html > tmpl.js
 ```
 
 The files given as command line arguments to **tmpl.js** can either be pure

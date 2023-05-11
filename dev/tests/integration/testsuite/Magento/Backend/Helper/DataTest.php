@@ -85,7 +85,7 @@ class DataTest extends \PHPUnit\Framework\TestCase
         )->setControllerModule(
             'dummy'
         )->setControllerName(
-            'index'
+            'Index'
         )->setActionName(
             'test'
         );
@@ -142,7 +142,7 @@ class DataTest extends \PHPUnit\Framework\TestCase
     public function testGetHomePageUrl()
     {
         $this->assertStringEndsWith(
-            'index.php/backend/admin/',
+            'Index.php/backend/admin/',
             $this->_helper->getHomePageUrl(),
             'Incorrect home page URL'
         );

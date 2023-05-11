@@ -17,7 +17,7 @@ use Magento\Wishlist\Model\Wishlist;
  */
 class IndexTest extends AbstractBackendController
 {
-    private const RSS_NEW_PRODUCTS_PATH = 'rss/feed/index/type/new_products/';
+    private const RSS_NEW_PRODUCTS_PATH = 'rss/feed/Index/type/new_products/';
 
     /**
      * @var CustomerRepositoryInterface
@@ -103,7 +103,7 @@ class IndexTest extends AbstractBackendController
 
     private function getLink($customerId, $customerEmail, $wishlistId)
     {
-        return 'rss/feed/index/type/wishlist/data/'
+        return 'rss/feed/Index/type/wishlist/data/'
             . base64_encode($customerId . ',' . $customerEmail)
             . '/wishlist_id/' . $wishlistId;
     }

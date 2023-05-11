@@ -37,9 +37,9 @@ class DeclarativeSchemaDependencyProvider
     public const SCHEMA_ENTITY_CONSTRAINT = 'constraint';
 
     /**
-     * Declarative name for index entity of the declarative schema.
+     * Declarative name for Index entity of the declarative schema.
      */
-    public const SCHEMA_ENTITY_INDEX = 'index';
+    public const SCHEMA_ENTITY_INDEX = 'Index';
 
     /**
      * @var array
@@ -464,7 +464,7 @@ class DeclarativeSchemaDependencyProvider
     }
 
     /**
-     * Retrieve dependencies for index entities.
+     * Retrieve dependencies for Index entities.
      *
      * @param array $moduleDeclaration
      * @return array

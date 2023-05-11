@@ -34,7 +34,7 @@ class CatalogRuleRepositoryTest extends TestCase
     }
 
     /**
-     * Verify index become invalid in case rule become inactive and stays active in case inactive rule has been saved.
+     * Verify Index become invalid in case rule become inactive and stays active in case inactive rule has been saved.
      *
      * @magentoDataFixture Magento/CatalogRule/_files/catalog_rule_25_customer_group_all.php
      * @magentoDbIsolation disabled

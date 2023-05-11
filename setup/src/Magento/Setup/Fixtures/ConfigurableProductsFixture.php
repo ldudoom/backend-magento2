@@ -352,7 +352,7 @@ class ConfigurableProductsFixture extends Fixture
     }
 
     /**
-     * Get sku pattern in format "{configurable-sku}{configurable-index}-option 1" for get associated product ids
+     * Get sku pattern in format "{configurable-sku}{configurable-Index}-option 1" for get associated product ids
      *
      * @param array $configurableConfig
      * @see \Magento\Setup\Model\FixtureGenerator\ConfigurableProductTemplateGenerator
@@ -366,7 +366,7 @@ class ConfigurableProductsFixture extends Fixture
     }
 
     /**
-     * Get start product index which used in product name, sku, url generation
+     * Get start product Index which used in product name, sku, url generation
      *
      * @return int
      */
@@ -382,7 +382,7 @@ class ConfigurableProductsFixture extends Fixture
     }
 
     /**
-     * Get configurable product index number
+     * Get configurable product Index number
      *
      * @param int $entityNumber
      * @param int $variationCount
@@ -394,7 +394,7 @@ class ConfigurableProductsFixture extends Fixture
     }
 
     /**
-     * Get configurable variation index number
+     * Get configurable variation Index number
      *
      * @param int $entityNumber
      * @param int $variationCount

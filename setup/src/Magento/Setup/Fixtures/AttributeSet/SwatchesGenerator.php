@@ -102,9 +102,9 @@ class SwatchesGenerator
     }
 
     /**
-     * Generate hex-coded color for Swatch Attribute based on provided index
+     * Generate hex-coded color for Swatch Attribute based on provided Index
      *
-     * Colors will change gradually according to index value.
+     * Colors will change gradually according to Index value.
      *
      * @param int $index
      * @return string

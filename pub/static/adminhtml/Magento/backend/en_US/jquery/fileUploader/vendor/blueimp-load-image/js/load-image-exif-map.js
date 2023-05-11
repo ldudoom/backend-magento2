@@ -114,7 +114,7 @@
       0xa20f: 'FocalPlaneYResolution', // Number of pixels in height direction per FPRUnit
       0xa210: 'FocalPlaneResolutionUnit', // Unit for measuring the focal plane resolution
       0xa214: 'SubjectLocation', // Location of subject in image
-      0xa215: 'ExposureIndex', // Exposure index selected on camera
+      0xa215: 'ExposureIndex', // Exposure Index selected on camera
       0xa217: 'SensingMethod', // Image sensor type
       0xa300: 'FileSource', // Image source (3 == DSC)
       0xa301: 'SceneType', // Scene type (1 == directly photographed)

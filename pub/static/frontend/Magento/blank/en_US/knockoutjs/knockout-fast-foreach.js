@@ -15,7 +15,7 @@
   }
 }(this, function (ko) {
   "use strict";
-// index.js
+// Index.js
 // --------
 // Fast For Each
 //
@@ -177,7 +177,7 @@ FastForEach.prototype.onArrayChange = function (changeSet) {
   };
   for (var i = 0, len = changeSet.length; i < len; i++) {
     // the change is appended to a last change info object when both are 'added' and have indexes next to each other
-    // here I presume that ko is sending changes in monotonic order (in index variable) which happens to be true, tested with push and splice with multiple pushed values
+    // here I presume that ko is sending changes in monotonic order (in Index variable) which happens to be true, tested with push and splice with multiple pushed values
     if (isAdditionAdjacentToLast(i, changeSet)) {
       var batchValues = changeMap.added[changeMap.added.length - 1].values;
       if (!batchValues) {
@@ -288,7 +288,7 @@ FastForEach.prototype.deleted = function (changeItem) {
 // See brianmhunt/knockout-fast-foreach#6/#8
 FastForEach.prototype.clearDeletedIndexes = function () {
   // We iterate in reverse on the presumption (following the unit tests) that KO's diff engine
-  // processes diffs (esp. deletes) monotonically ascending i.e. from index 0 -> N.
+  // processes diffs (esp. deletes) monotonically ascending i.e. from Index 0 -> N.
   for (var i = this.indexesToDelete.length - 1; i >= 0; --i) {
     this.lastNodesList.splice(this.indexesToDelete[i], 1);
   }

@@ -39,7 +39,7 @@ $debug = function ($val) {
 
 if (php_sapi_name() === 'cli-server') {
     $debug("URI: {$_SERVER["REQUEST_URI"]}");
-    if (preg_match('/^\/(index|get|static)\.php(\/)?/', $_SERVER["REQUEST_URI"])) {
+    if (preg_match('/^\/(Index|get|static)\.php(\/)?/', $_SERVER["REQUEST_URI"])) {
         return false;    // serve the requested resource as-is.
     }
 
@@ -115,7 +115,7 @@ if (php_sapi_name() === 'cli-server') {
             }
         }
     } else {
-        $debug("thunk to index in $route");
+        $debug("thunk to Index in $route");
         include($magentoPackagePubDir.'/index.php');
     }
 }

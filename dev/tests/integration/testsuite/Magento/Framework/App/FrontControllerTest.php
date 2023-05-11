@@ -92,7 +92,7 @@ class FrontControllerTest extends TestCase
         $this->_objectManager->get(State::class)->setAreaCode('frontend');
         $request = $this->_objectManager->get(HttpRequest::class);
         /* empty action */
-        $request->setRequestUri('core/index/index');
+        $request->setRequestUri('core/Index/Index');
         $this->assertInstanceOf(
             ResultInterface::class,
             $this->_model->dispatch($request)
@@ -112,7 +112,7 @@ class FrontControllerTest extends TestCase
         $this->_objectManager->get(State::class)->setAreaCode('frontend');
         $request = $this->_objectManager->get(HttpRequest::class);
         /* empty action */
-        $request->setRequestUri('core/index/index');
+        $request->setRequestUri('core/Index/Index');
         $this->assertInstanceOf(
             ResultInterface::class,
             $this->_model->dispatch($request)

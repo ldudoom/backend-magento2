@@ -168,7 +168,7 @@ class FulltextTest extends \PHPUnit\Framework\TestCase
     /**
      * Test the case when the last child product of the configurable becomes disabled/out of stock.
      *
-     * Such behavior should enforce parent product to be deleted from the index as its latest child become unavailable
+     * Such behavior should enforce parent product to be deleted from the Index as its latest child become unavailable
      * and the configurable cannot be sold anymore.
      *
      * @return void

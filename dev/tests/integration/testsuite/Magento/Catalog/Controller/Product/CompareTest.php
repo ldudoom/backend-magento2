@@ -92,7 +92,7 @@ class CompareTest extends AbstractController
             $this->equalTo(
                 [
                     'You added product Simple Product 1 Name to the ' .
-                    '<a href="http://localhost/index.php/catalog/product_compare/">comparison list</a>.'
+                    '<a href="http://localhost/Index.php/catalog/product_compare/">comparison list</a>.'
                 ]
             ),
             MessageInterface::TYPE_SUCCESS
@@ -203,7 +203,7 @@ class CompareTest extends AbstractController
         $layout = $this->_objectManager->get(\Magento\Framework\View\LayoutInterface::class);
         $layout->setIsCacheable(false);
 
-        $this->dispatch('catalog/product_compare/index');
+        $this->dispatch('catalog/product_compare/Index');
 
         $responseBody = $this->getResponse()->getBody();
 

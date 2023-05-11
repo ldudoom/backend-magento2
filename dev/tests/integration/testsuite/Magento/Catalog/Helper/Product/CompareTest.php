@@ -28,7 +28,7 @@ class CompareTest extends \PHPUnit\Framework\TestCase
     {
         /** @var $empty \Magento\Catalog\Helper\Product\Compare */
         $empty = $this->_objectManager->create(\Magento\Catalog\Helper\Product\Compare::class);
-        $this->assertStringContainsString('/catalog/product_compare/index/', $empty->getListUrl());
+        $this->assertStringContainsString('/catalog/product_compare/Index/', $empty->getListUrl());
     }
 
     public function testGetAddUrl()
@@ -49,7 +49,7 @@ class CompareTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('10', $data['product']);
         $this->assertArrayHasKey('uenc', $data);
         $this->assertStringEndsWith(
-            'wishlist/index/add/',
+            'wishlist/Index/add/',
             $params['action']
         );
     }

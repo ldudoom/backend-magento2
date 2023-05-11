@@ -1956,7 +1956,7 @@
                             break;
 
                         case 'splice':
-                            // Negative start index means 'from end of array'. After that we clamp to [0...arrayLength].
+                            // Negative start Index means 'from end of array'. After that we clamp to [0...arrayLength].
                             // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
                             var startIndex = Math.min(Math.max(0, args[0] < 0 ? arrayLength + args[0] : args[0]), arrayLength),
                                 endDeleteIndex = argsLength === 1 ? arrayLength : Math.min(startIndex + (args[1] || 0), arrayLength),
@@ -6331,7 +6331,7 @@
                         mapData = lastMappingResult[oldPosition];
                         if (currentArrayIndex !== mapData.indexObservable.peek())
                             itemsForMoveCallbacks.push(mapData);
-                        // Since updating the index might change the nodes, do so before calling fixUpContinuousNodeArray
+                        // Since updating the Index might change the nodes, do so before calling fixUpContinuousNodeArray
                         mapData.indexObservable(currentArrayIndex++);
                         ko.utils.fixUpContinuousNodeArray(mapData.mappedNodes, domNode);
                         newMappingResult.push(mapData);

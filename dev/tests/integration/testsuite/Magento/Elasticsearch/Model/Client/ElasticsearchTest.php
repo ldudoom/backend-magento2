@@ -86,7 +86,7 @@ class ElasticsearchTest extends \PHPUnit\Framework\TestCase
     {
         $storeId = $this->storeManager->getDefaultStoreView()->getId();
         $searchQuery = [
-            'index' => $this->searchIndexNameResolver->getIndexName($storeId, 'catalogsearch_fulltext'),
+            'Index' => $this->searchIndexNameResolver->getIndexName($storeId, 'catalogsearch_fulltext'),
             'type' => $this->clientConfig->getEntityType(),
             'body' => [
                 'query' => [

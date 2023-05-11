@@ -14,8 +14,8 @@ define([
     $.widget('mage.dataPost', {
         options: {
             formTemplate: '<form action="<%- data.action %>" method="post">' +
-            '<% _.each(data.data, function(value, index) { %>' +
-            '<input name="<%- index %>" value="<%- value %>">' +
+            '<% _.each(data.data, function(value, Index) { %>' +
+            '<input name="<%- Index %>" value="<%- value %>">' +
             '<% }) %></form>',
             postTrigger: ['a[data-post]', 'button[data-post]', 'span[data-post]'],
             formKeyInputSelector: 'input[name="form_key"]'

@@ -211,7 +211,7 @@ class CreatePostTest extends AbstractController
         $email = 'test2@email.com';
         $this->fillRequestWithAccountData($email);
         $this->dispatch('customer/account/createPost');
-        $this->assertRedirect($this->stringContains('customer/account/index/'));
+        $this->assertRedirect($this->stringContains('customer/account/Index/'));
         $message = 'You must confirm your account.'
             . ' Please check your email for the confirmation link or <a href="%1">click here</a> for a new link.';
         $url = $this->urlBuilder->getUrl('customer/account/confirmation', ['_query' => ['email' => $email]]);
@@ -251,7 +251,7 @@ class CreatePostTest extends AbstractController
         $email = 'test_example@email.com';
         $this->fillRequestWithAccountData($email);
         $this->dispatch('customer/account/createPost');
-        $this->assertRedirect($this->stringContains('customer/account/index/'));
+        $this->assertRedirect($this->stringContains('customer/account/Index/'));
         $message = 'You must confirm your account.'
             . ' Please check your email for the confirmation link or <a href="%1">click here</a> for a new link.';
         $url = $this->urlBuilder->getUrl('customer/account/confirmation', ['_query' => ['email' => $email]]);
@@ -278,7 +278,7 @@ class CreatePostTest extends AbstractController
             ->setParam('id', $customer->getId())
             ->setParam('key', $confirmation);
         $this->dispatch('customer/account/confirm');
-        $this->assertRedirect($this->stringContains('customer/account/index/'));
+        $this->assertRedirect($this->stringContains('customer/account/Index/'));
         $this->assertSessionMessages(
             $this->containsEqual(
                 (string)__('Thank you for registering with %1.', $this->storeManager->getStore()->getFrontendName())

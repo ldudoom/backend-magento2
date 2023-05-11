@@ -336,7 +336,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get store id for quote item by product index.
+     * Get store id for quote item by product Index.
      *
      * @param int $entityId
      * @return int
@@ -347,7 +347,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get store name for quote item by product index.
+     * Get store name for quote item by product Index.
      *
      * @param int $entityId
      * @return string
@@ -358,7 +358,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get product id for quote item by product index.
+     * Get product id for quote item by product Index.
      *
      * @param int $entityId
      * @param int $index
@@ -371,7 +371,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get product SKU for quote item by product index.
+     * Get product SKU for quote item by product Index.
      *
      * @param int $entityId
      * @param int $index
@@ -384,7 +384,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get product name for quote item by product index.
+     * Get product name for quote item by product Index.
      *
      * @param int $entityId
      * @param int $index
@@ -397,7 +397,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get product buy request for quote item by product index.
+     * Get product buy request for quote item by product Index.
      *
      * @param int $entityId
      * @param int $index
@@ -410,7 +410,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get configurable product child id for quote item by product index.
+     * Get configurable product child id for quote item by product Index.
      *
      * @param int $entityId
      * @param int $index
@@ -423,7 +423,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get configurable product child id for quote item by product index.
+     * Get configurable product child id for quote item by product Index.
      *
      * @param int $entityId
      * @param int $index
@@ -436,7 +436,7 @@ class QuoteGenerator
     }
 
     /**
-     * Get index of item in product stub array.
+     * Get Index of item in product stub array.
      *
      * @param int $entityId
      * @return int

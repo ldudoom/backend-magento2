@@ -105,6 +105,6 @@ class AllcartTest extends AbstractController
     private function performAddAllToCartRequest(): void
     {
         $this->getRequest()->setMethod(HttpRequest::METHOD_POST);
-        $this->dispatch('wishlist/index/allcart');
+        $this->dispatch('wishlist/Index/allcart');
     }
 }

@@ -86,7 +86,7 @@ foreach (['de_ex', 'en_ex', 'es_ex', 'fr_ex', 'zh_ex'] as $storeCode) {
     $storeResource->save($store);
 }
 
-/* Refresh CatalogSearch index */
+/* Refresh CatalogSearch Index */
 /** @var IndexerRegistry $indexerRegistry */
 $storeManager->reinitStores();
 $indexerRegistry = $objectManager->get(IndexerRegistry::class);

@@ -151,7 +151,7 @@ class MassactionTest extends \PHPUnit\Framework\TestCase
                 [
                     'id' => 'option_id1',
                     'label' => 'Option One',
-                    'url' => '#http:\/\/localhost\/index\.php\/(?:key\/([\w\d]+)\/)?#',
+                    'url' => '#http:\/\/localhost\/Index\.php\/(?:key\/([\w\d]+)\/)?#',
                     'selected' => false,
                     'blockname' => ''
                 ],
@@ -161,7 +161,7 @@ class MassactionTest extends \PHPUnit\Framework\TestCase
                 [
                     'id' => 'option_id2',
                     'label' => 'Option Two',
-                    'url' => '#http:\/\/localhost\/index\.php\/(?:key\/([\w\d]+)\/)?#',
+                    'url' => '#http:\/\/localhost\/Index\.php\/(?:key\/([\w\d]+)\/)?#',
                     'selected' => false,
                     'blockname' => ''
                 ]
@@ -171,7 +171,7 @@ class MassactionTest extends \PHPUnit\Framework\TestCase
                 [
                     'id' => 'option_id3',
                     'label' => 'Option Three',
-                    'url' => '#http:\/\/localhost\/index\.php\/(?:key\/([\w\d]+)\/)?#',
+                    'url' => '#http:\/\/localhost\/Index\.php\/(?:key\/([\w\d]+)\/)?#',
                     'selected' => false,
                     'blockname' => ''
                 ]

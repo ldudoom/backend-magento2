@@ -99,7 +99,7 @@ class SendTest extends AbstractController
         $this->assertEquals(
             1,
             Xpath::getElementsCountForXpath(
-                "//a[contains(@href, 'wishlist/shared/index/code/fixture_unique_code/')"
+                "//a[contains(@href, 'wishlist/shared/Index/code/fixture_unique_code/')"
                 . " and contains(text(), 'View all Wish List')]",
                 $messageContent
             )
@@ -163,7 +163,7 @@ class SendTest extends AbstractController
     private function dispatchSendWishListRequest(array $postValues): void
     {
         $this->getRequest()->setPostValue($postValues)->setMethod(HttpRequest::METHOD_POST);
-        $this->dispatch('wishlist/index/send');
+        $this->dispatch('wishlist/Index/send');
     }
 
     /**
@@ -175,6 +175,6 @@ class SendTest extends AbstractController
     private function assertResponseWithError(string $message): void
     {
         $this->assertSessionMessages($this->equalTo([__($message)]), MessageInterface::TYPE_ERROR);
-        $this->assertRedirect($this->stringContains('wishlist/index/share'));
+        $this->assertRedirect($this->stringContains('wishlist/Index/share'));
     }
 }

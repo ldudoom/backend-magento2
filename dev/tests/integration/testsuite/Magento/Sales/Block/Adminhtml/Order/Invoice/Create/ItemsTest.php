@@ -79,7 +79,7 @@ class ItemsTest extends TestCase
         $button = $this->block->getChildBlock('update_button');
         $this->assertEquals((string)__('Update Qty\'s'), (string)$button->getLabel());
         $this->assertStringContainsString(
-            sprintf('sales/index/updateQty/order_id/%u/', (int)$order->getEntityId()),
+            sprintf('sales/Index/updateQty/order_id/%u/', (int)$order->getEntityId()),
             $button->getOnClick()
         );
     }

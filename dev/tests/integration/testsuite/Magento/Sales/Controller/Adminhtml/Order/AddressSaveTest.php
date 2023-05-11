@@ -102,7 +102,7 @@ class AddressSaveTest extends AbstractBackendController
     public function testInvalidRequest(array $params, array $post = []): void
     {
         $this->dispatchWithParams($params, $post);
-        $this->assertRedirect($this->stringContains('backend/sales/order/index/'));
+        $this->assertRedirect($this->stringContains('backend/sales/order/Index/'));
     }
 
     /**

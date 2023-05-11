@@ -86,7 +86,7 @@ class UpdateItemOptionsTest extends AbstractController
         $this->performUpdateWishListItemRequest($params);
         $message = sprintf("%s has been updated in your Wish List.", $item->getProduct()->getName());
         $this->assertSessionMessages($this->equalTo([(string)__($message)]), MessageInterface::TYPE_SUCCESS);
-        $this->assertRedirect($this->stringContains('wishlist/index/index/wishlist_id/' . $item->getWishlistId()));
+        $this->assertRedirect($this->stringContains('wishlist/Index/Index/wishlist_id/' . $item->getWishlistId()));
         $this->assertUpdatedItem(
             $this->getWishlistByCustomerId->getItemBySku(1, 'Configurable product'),
             $params
@@ -150,7 +150,7 @@ class UpdateItemOptionsTest extends AbstractController
         $this->performUpdateWishListItemRequest(['product' => $product->getId()]);
         $message = $this->escaper->escapeHtml("We can't specify a wish list item.");
         $this->assertSessionMessages($this->equalTo([(string)__($message)]), MessageInterface::TYPE_ERROR);
-        $this->assertRedirect($this->stringContains('wishlist/index/index/wishlist_id/'));
+        $this->assertRedirect($this->stringContains('wishlist/Index/Index/wishlist_id/'));
     }
 
     /**
@@ -173,7 +173,7 @@ class UpdateItemOptionsTest extends AbstractController
         $this->performUpdateWishListItemRequest($params);
         $message = sprintf("%s has been updated in your Wish List.", $item->getProduct()->getName());
         $this->assertSessionMessages($this->equalTo([(string)__($message)]), MessageInterface::TYPE_SUCCESS);
-        $this->assertRedirect($this->stringContains('wishlist/index/index/wishlist_id/' . $item->getWishlistId()));
+        $this->assertRedirect($this->stringContains('wishlist/Index/Index/wishlist_id/' . $item->getWishlistId()));
         $this->assertUpdatedItem(
             $this->getWishlistByCustomerId->getItemBySku(1, 'grouped'),
             $params
@@ -189,7 +189,7 @@ class UpdateItemOptionsTest extends AbstractController
     private function performUpdateWishListItemRequest(array $params): void
     {
         $this->getRequest()->setParams($params)->setMethod(HttpRequest::METHOD_POST);
-        $this->dispatch('wishlist/index/updateItemOptions');
+        $this->dispatch('wishlist/Index/updateItemOptions');
     }
 
     /**

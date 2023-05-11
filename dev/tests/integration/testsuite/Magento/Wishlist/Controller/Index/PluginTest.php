@@ -74,7 +74,7 @@ class PluginTest extends AbstractController
             ]
         );
         $this->getRequest()->setParams(['product' => $product->getId(), 'nocookie' => 1]);
-        $this->dispatch('wishlist/index/add');
+        $this->dispatch('wishlist/Index/add');
         $this->assertArrayNotHasKey('login', $this->customerSession->getBeforeWishlistRequest());
         $expectedMessage = 'You must login or register to add items to your wishlist.';
         $this->assertSessionMessages($this->equalTo([(string)__($expectedMessage)]), MessageInterface::TYPE_ERROR);
@@ -89,7 +89,7 @@ class PluginTest extends AbstractController
     public function testWithDisabledWishList(): void
     {
         $this->customerSession->setCustomerId(1);
-        $this->dispatch('wishlist/index/index');
+        $this->dispatch('wishlist/Index/Index');
         $this->assert404NotFound();
     }
 }

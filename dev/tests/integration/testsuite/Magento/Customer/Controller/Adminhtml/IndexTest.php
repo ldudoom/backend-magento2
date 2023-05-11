@@ -31,7 +31,7 @@ class IndexTest extends AbstractBackendController
     /**
      * @var string
      */
-    private $baseControllerUrl = 'backend/customer/index/';
+    private $baseControllerUrl = 'backend/customer/Index/';
 
     /** @var CustomerRepositoryInterface */
     private $customerRepository;
@@ -103,7 +103,7 @@ class IndexTest extends AbstractBackendController
         $this->getRequest()->setParam('ajax', true)->setParam('isAjax', true);
         $this->getRequest()->setPostValue($post)->setMethod(HttpRequest::METHOD_POST);
         $this->getRequest()->setParam('id', 1);
-        $this->dispatch('backend/customer/index/inlineEdit');
+        $this->dispatch('backend/customer/Index/inlineEdit');
 
         /**
          * Check that no errors were generated and set to session
@@ -117,7 +117,7 @@ class IndexTest extends AbstractBackendController
     public function testEditAction()
     {
         $this->getRequest()->setParam('id', 1);
-        $this->dispatch('backend/customer/index/edit');
+        $this->dispatch('backend/customer/Index/edit');
         $body = $this->getResponse()->getBody();
 
         // verify
@@ -129,7 +129,7 @@ class IndexTest extends AbstractBackendController
      */
     public function testNewAction()
     {
-        $this->dispatch('backend/customer/index/edit');
+        $this->dispatch('backend/customer/Index/edit');
         $body = $this->getResponse()->getBody();
 
         // verify
@@ -166,7 +166,7 @@ class IndexTest extends AbstractBackendController
     {
         // No customer ID in post, will just get redirected to base
         $this->getRequest()->setMethod(HttpRequest::METHOD_GET);
-        $this->dispatch('backend/customer/index/resetPassword');
+        $this->dispatch('backend/customer/Index/resetPassword');
         $this->assertRedirect($this->stringContains($this->baseControllerUrl));
     }
 
@@ -178,7 +178,7 @@ class IndexTest extends AbstractBackendController
         // Bad customer ID in post, will just get redirected to base
         $this->getRequest()->setMethod(HttpRequest::METHOD_GET);
         $this->getRequest()->setPostValue(['customer_id' => '789']);
-        $this->dispatch('backend/customer/index/resetPassword');
+        $this->dispatch('backend/customer/Index/resetPassword');
         $this->assertRedirect($this->stringContains($this->baseControllerUrl));
     }
 
@@ -189,7 +189,7 @@ class IndexTest extends AbstractBackendController
     {
         $this->getRequest()->setPostValue(['customer_id' => '1']);
         $this->getRequest()->setMethod(HttpRequest::METHOD_GET);
-        $this->dispatch('backend/customer/index/resetPassword');
+        $this->dispatch('backend/customer/Index/resetPassword');
         $this->assertSessionMessages(
             $this->equalTo(['The customer will receive an email with a link to reset password.']),
             MessageInterface::TYPE_SUCCESS
@@ -203,7 +203,7 @@ class IndexTest extends AbstractBackendController
     public function testAclDeleteActionAllow()
     {
         $this->getRequest()->setParam('id', 1);
-        $this->dispatch('backend/customer/index/edit');
+        $this->dispatch('backend/customer/Index/edit');
         $body = $this->getResponse()->getBody();
         $this->assertStringContainsString('Delete Customer', $body);
     }
@@ -218,7 +218,7 @@ class IndexTest extends AbstractBackendController
             ->getAcl()
             ->deny(Bootstrap::ADMIN_ROLE_ID, $resource);
         $this->getRequest()->setParam('id', 1);
-        $this->dispatch('backend/customer/index/edit');
+        $this->dispatch('backend/customer/Index/edit');
         $body = $this->getResponse()->getBody();
         $this->assertStringNotContainsString('Delete Customer', $body);
     }

@@ -347,7 +347,7 @@ class GroupExcludedWebsiteTest extends \PHPUnit\Framework\TestCase
         $catalogRuleGroupWebsites = $connection->fetchAll($selectCatalogRuleGroupWebsite);
         self::assertCount(0, $catalogRuleGroupWebsites);
 
-        /** Check that excluding website from customer group affects price index */
+        /** Check that excluding website from customer group affects price Index */
         /** @var Price $catalogProductIndexPriceResource */
         $catalogProductIndexPriceResource = $this->objectManager->create(Price::class);
         $select = $connection->select();
@@ -439,7 +439,7 @@ class GroupExcludedWebsiteTest extends \PHPUnit\Framework\TestCase
             self::assertEquals($websiteId, $catalogRuleGroupWebsite['website_id']);
         }
 
-        /** Check price index */
+        /** Check price Index */
         /** @var Price $catalogProductIndexPriceResource */
         $catalogProductIndexPriceResource = $this->objectManager->create(Price::class);
         $select = $connection->select();

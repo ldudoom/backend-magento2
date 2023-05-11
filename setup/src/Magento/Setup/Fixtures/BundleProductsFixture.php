@@ -206,7 +206,7 @@ class BundleProductsFixture extends Fixture
     }
 
     /**
-     * Get start index for product number generation
+     * Get start Index for product number generation
      *
      * @return int
      */
@@ -222,7 +222,7 @@ class BundleProductsFixture extends Fixture
     }
 
     /**
-     * Get bundle product index number
+     * Get bundle product Index number
      *
      * @param int $entityNumber
      * @param int $variationCount
@@ -234,7 +234,7 @@ class BundleProductsFixture extends Fixture
     }
 
     /**
-     * Get bundle variation index number
+     * Get bundle variation Index number
      *
      * @param int $entityNumber
      * @param int $variationCount

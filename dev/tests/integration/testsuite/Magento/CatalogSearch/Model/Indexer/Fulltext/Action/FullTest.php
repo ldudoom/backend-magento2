@@ -15,7 +15,7 @@ use Magento\Catalog\Model\Product;
 use Magento\TestFramework\Helper\Bootstrap;
 
 /**
- * Class for testing fulltext index rebuild
+ * Class for testing fulltext Index rebuild
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class FullTest extends \PHPUnit\Framework\TestCase
@@ -25,7 +25,7 @@ class FullTest extends \PHPUnit\Framework\TestCase
         $this->markTestSkipped("MC-18332: Mysql Search Engine is deprecated and will be removed");
     }
     /**
-     * Testing fulltext index rebuild
+     * Testing fulltext Index rebuild
      *
      * @magentoDataFixture Magento/CatalogSearch/_files/products_for_index.php
      * @magentoDataFixture Magento/CatalogSearch/_files/product_configurable_not_available.php
@@ -66,7 +66,7 @@ class FullTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Prepare and return expected index data
+     * Prepare and return expected Index data
      *
      * @return array
      * @throws \Magento\Framework\Exception\NoSuchEntityException
@@ -97,37 +97,37 @@ class FullTest extends \PHPUnit\Framework\TestCase
             ],
             'index_enabled' => [
                 $skuId => 'index_enabled',
-                $nameId => 'index enabled',
+                $nameId => 'Index enabled',
                 $taxClassId => 'Taxable Goods',
                 $statusId => 'Enabled',
-                $urlKeyId => 'index-enabled'
+                $urlKeyId => 'Index-enabled'
             ],
             'index_visible_search' => [
                 $skuId => 'index_visible_search',
-                $nameId => 'index visible search',
+                $nameId => 'Index visible search',
                 $taxClassId => 'Taxable Goods',
                 $statusId => 'Enabled',
-                $urlKeyId => 'index-visible-search'
+                $urlKeyId => 'Index-visible-search'
             ],
             'index_visible_category' => [
                 $skuId => 'index_visible_category',
-                $nameId => 'index visible category',
+                $nameId => 'Index visible category',
                 $taxClassId => 'Taxable Goods',
                 $statusId => 'Enabled',
-                $urlKeyId => 'index-visible-category'
+                $urlKeyId => 'Index-visible-category'
             ],
             'index_visible_both' => [
                 $skuId => 'index_visible_both',
-                $nameId => 'index visible both',
+                $nameId => 'Index visible both',
                 $taxClassId => 'Taxable Goods',
                 $statusId => 'Enabled',
-                $urlKeyId => 'index-visible-both'
+                $urlKeyId => 'Index-visible-both'
             ]
         ];
     }
 
     /**
-     * Testing fulltext index rebuild with configurations
+     * Testing fulltext Index rebuild with configurations
      *
      * @magentoDataFixture Magento/ConfigurableProduct/_files/product_configurable.php
      */

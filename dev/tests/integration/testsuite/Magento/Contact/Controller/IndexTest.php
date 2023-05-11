@@ -9,7 +9,7 @@ namespace Magento\Contact\Controller;
 use Magento\Framework\App\Request\Http as HttpRequest;
 
 /**
- * Contact index controller test
+ * Contact Index controller test
  */
 class IndexTest extends \Magento\TestFramework\TestCase\AbstractController
 {
@@ -26,8 +26,8 @@ class IndexTest extends \Magento\TestFramework\TestCase\AbstractController
         ];
         $this->getRequest()->setPostValue($params)->setMethod(HttpRequest::METHOD_POST);
 
-        $this->dispatch('contact/index/post');
-        $this->assertRedirect($this->stringContains('contact/index'));
+        $this->dispatch('contact/Index/post');
+        $this->assertRedirect($this->stringContains('contact/Index'));
         $this->assertSessionMessages(
             $this->containsEqual(
                 "Thanks for contacting us with your comments and questions. We&#039;ll respond to you very soon."
@@ -48,8 +48,8 @@ class IndexTest extends \Magento\TestFramework\TestCase\AbstractController
     {
         $this->getRequest()->setPostValue($params)->setMethod(HttpRequest::METHOD_POST);
 
-        $this->dispatch('contact/index/post');
-        $this->assertRedirect($this->stringContains('contact/index'));
+        $this->dispatch('contact/Index/post');
+        $this->assertRedirect($this->stringContains('contact/Index'));
         $this->assertSessionMessages(
             $this->containsEqual($expectedMessage),
             \Magento\Framework\Message\MessageInterface::TYPE_ERROR

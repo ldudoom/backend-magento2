@@ -11,7 +11,7 @@ use Magento\TestFramework\TestCase\AbstractController;
 use Laminas\Stdlib\Parameters;
 
 /**
- * Test cases for catalog advanced index using params.
+ * Test cases for catalog advanced Index using params.
  *
  * @magentoDbIsolation disabled
  * @magentoAppIsolation enabled
@@ -19,7 +19,7 @@ use Laminas\Stdlib\Parameters;
 class IndexTest extends AbstractController
 {
     /**
-     * Advanced index test by params with the array in params.
+     * Advanced Index test by params with the array in params.
      *
      * @magentoAppArea frontend
      * @dataProvider fromParamsInArrayDataProvider
@@ -37,7 +37,7 @@ class IndexTest extends AbstractController
                 ]
             )
         );
-        $this->dispatch('catalogsearch/advanced/index');
+        $this->dispatch('catalogsearch/advanced/Index');
         $this->assertEquals(200, $this->getResponse()->getStatusCode());
         $this->getResponse()->getBody();
     }

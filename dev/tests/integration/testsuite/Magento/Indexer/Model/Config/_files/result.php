@@ -35,7 +35,7 @@ return [
         'view_id' => 'catalogsearch_fulltext',
         'action_class' => \Magento\CatalogSearch\Model\Indexer\Fulltext::class,
         'title' => __('Catalog Search'),
-        'description' => __('Rebuild Catalog product fulltext search index'),
+        'description' => __('Rebuild Catalog product fulltext search Index'),
         'fieldsets' => [
             [
                 'source' => 'MagentoModule\\ServiceClassOrRepositoryClass',

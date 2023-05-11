@@ -179,7 +179,7 @@ class FileClassScanner
     }
 
     /**
-     * Looks forward from the current index to determine if the namespace is nested in {} or terminated with ;
+     * Looks forward from the current Index to determine if the namespace is nested in {} or terminated with ;
      *
      * @param integer $index
      * @return bool

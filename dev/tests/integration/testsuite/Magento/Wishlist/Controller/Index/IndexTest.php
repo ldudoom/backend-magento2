@@ -62,7 +62,7 @@ class IndexTest extends AbstractController
     public function testItemColumnBlock(): void
     {
         $this->customerSession->setCustomerId(1);
-        $this->dispatch('wishlist/index/index');
+        $this->dispatch('wishlist/Index/Index');
         $body = $this->getResponse()->getBody();
         $this->assertEquals(
             1,

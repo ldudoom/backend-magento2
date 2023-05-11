@@ -57,8 +57,8 @@ class MassUnsubscribeTest extends AbstractBackendController
             'namespace' => 'customer_listing',
         ];
         $this->getRequest()->setParams($params)->setMethod(HttpRequest::METHOD_POST);
-        $this->dispatch('backend/customer/index/massUnsubscribe');
-        $this->assertRedirect($this->stringContains('backend/customer/index/index'));
+        $this->dispatch('backend/customer/Index/massUnsubscribe');
+        $this->assertRedirect($this->stringContains('backend/customer/Index/Index'));
         $this->assertSessionMessages(
             $this->equalTo([(string)__('A total of 3 record(s) were updated.')]),
             MessageInterface::TYPE_SUCCESS
@@ -81,8 +81,8 @@ class MassUnsubscribeTest extends AbstractBackendController
             'namespace' => 'customer_listing',
         ];
         $this->getRequest()->setParams($params)->setMethod(HttpRequest::METHOD_POST);
-        $this->dispatch('backend/customer/index/massUnsubscribe');
-        $this->assertRedirect($this->stringContains('backend/customer/index/index'));
+        $this->dispatch('backend/customer/Index/massUnsubscribe');
+        $this->assertRedirect($this->stringContains('backend/customer/Index/Index'));
         $this->assertSessionMessages(
             $this->equalTo([(string)__('An item needs to be selected. Select and try again.')]),
             MessageInterface::TYPE_ERROR

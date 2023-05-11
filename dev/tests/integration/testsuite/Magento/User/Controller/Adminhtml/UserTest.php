@@ -19,7 +19,7 @@ class UserTest extends \Magento\TestFramework\TestCase\AbstractBackendController
      */
     public function testIndexAction()
     {
-        $this->dispatch('backend/admin/user/index');
+        $this->dispatch('backend/admin/user/Index');
         $response = $this->getResponse()->getBody();
         $this->assertStringContainsString('Users', $response);
         $this->assertEquals(
@@ -38,7 +38,7 @@ class UserTest extends \Magento\TestFramework\TestCase\AbstractBackendController
     {
         $this->getRequest()->setMethod(HttpRequest::METHOD_POST);
         $this->dispatch('backend/admin/user/save');
-        $this->assertRedirect($this->stringContains('backend/admin/user/index/'));
+        $this->assertRedirect($this->stringContains('backend/admin/user/Index/'));
     }
 
     /**
@@ -64,7 +64,7 @@ class UserTest extends \Magento\TestFramework\TestCase\AbstractBackendController
             $this->equalTo(['This user no longer exists.']),
             \Magento\Framework\Message\MessageInterface::TYPE_ERROR
         );
-        $this->assertRedirect($this->stringContains('backend/admin/user/index/'));
+        $this->assertRedirect($this->stringContains('backend/admin/user/Index/'));
     }
 
     /**
@@ -120,7 +120,7 @@ class UserTest extends \Magento\TestFramework\TestCase\AbstractBackendController
             $this->equalTo(['You saved the user.']),
             \Magento\Framework\Message\MessageInterface::TYPE_SUCCESS
         );
-        $this->assertRedirect($this->stringContains('backend/admin/user/index/'));
+        $this->assertRedirect($this->stringContains('backend/admin/user/Index/'));
     }
 
     /**
@@ -172,7 +172,7 @@ class UserTest extends \Magento\TestFramework\TestCase\AbstractBackendController
         $user = $objectManager->create(\Magento\User\Model\User::class);
         $user->loadByUsername($postData['username']);
         if ($isPasswordCorrect) {
-            $this->assertRedirect($this->stringContains('backend/admin/user/index'));
+            $this->assertRedirect($this->stringContains('backend/admin/user/Index'));
             $this->assertEquals($postData['username'], $user->getUsername());
             $this->assertEquals($postData['email'], $user->getEmail());
             $this->assertEquals($postData['firstname'], $user->getFirstname());

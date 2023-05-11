@@ -59,7 +59,7 @@
     _audioElement: document.createElement('audio'),
 
     processActions: {
-      // Loads the audio file given via data.files and data.index
+      // Loads the audio file given via data.files and data.Index
       // as audio element if the browser supports playing it.
       // Accepts the options fileTypes (regular expression)
       // and maxFileSize (integer) to limit the files to load:

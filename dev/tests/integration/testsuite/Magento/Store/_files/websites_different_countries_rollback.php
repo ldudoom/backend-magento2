@@ -51,7 +51,7 @@ $registry->register('isSecureArea', false);
 /** @var \Magento\Store\Model\StoreManagerInterface $storeManager */
 $storeManager = $objectManager->get(\Magento\Store\Model\StoreManagerInterface::class);
 $storeManager->reinitStores();
-/* Refresh CatalogSearch index */
+/* Refresh CatalogSearch Index */
 /** @var \Magento\Framework\Indexer\IndexerRegistry $indexerRegistry */
 $indexerRegistry = $objectManager->create(\Magento\Framework\Indexer\IndexerRegistry::class);
 $indexerRegistry->get(FulltextIndex::INDEXER_ID)->reindexAll();

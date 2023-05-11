@@ -83,7 +83,7 @@ class CartTest extends AbstractBackendController
     }
 
     /**
-     * Dispatch admin shopping cart using backend/customer/index/cart action.
+     * Dispatch admin shopping cart using backend/customer/Index/cart action.
      *
      * @param array $params
      * @param array $postValue
@@ -94,6 +94,6 @@ class CartTest extends AbstractBackendController
         $this->getRequest()->setMethod(HttpRequest::METHOD_POST);
         $this->getRequest()->setParams($params);
         $this->getRequest()->setPostValue($postValue);
-        $this->dispatch('backend/customer/index/cart');
+        $this->dispatch('backend/customer/Index/cart');
     }
 }

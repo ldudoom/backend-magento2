@@ -190,11 +190,11 @@ class AddTest extends AbstractController
         $data = [];
         $data['product'] = (int)$product->getId();
         $this->customerSession->setBeforeWishlistRequest($data);
-        $this->customerSession->setBeforeAuthUrl($this->urlBuilder->getUrl('wishlist/index/add'));
+        $this->customerSession->setBeforeAuthUrl($this->urlBuilder->getUrl('wishlist/Index/add'));
         $email = 'test_example_new@email.com';
         $this->fillRequestWithCustomerData($email);
         $this->dispatch('customer/account/createPost');
-        $this->assertRedirect($this->stringContains('customer/account/index'));
+        $this->assertRedirect($this->stringContains('customer/account/Index'));
         $message = 'You must confirm your account.'
             . ' Please check your email for the confirmation link or <a href="%1">click here</a> for a new link.';
         $url = $this->urlBuilder->getUrl('customer/account/confirmation', ['_query' => ['email' => $email]]);
@@ -246,7 +246,7 @@ class AddTest extends AbstractController
         $this->assertEquals(null, $customer->getConfirmation());
         $this->customerSession->setCustomerId((int)$customer->getId());
         $this->getRequest()->setParams(['token' => $token])->setMethod(HttpRequest::METHOD_GET);
-        $this->dispatch('wishlist/index/add');
+        $this->dispatch('wishlist/Index/add');
         $this->assertSuccess((int)$customer->getId(), 1, $product->getName());
     }
 
@@ -294,7 +294,7 @@ class AddTest extends AbstractController
     private function performAddToWishListRequest(array $params): void
     {
         $this->getRequest()->setParams($params)->setMethod(HttpRequest::METHOD_POST);
-        $this->dispatch('wishlist/index/add');
+        $this->dispatch('wishlist/Index/add');
     }
 
     /**
@@ -312,7 +312,7 @@ class AddTest extends AbstractController
         $this->assertSessionMessages($this->equalTo([(string)__($expectedMessage)]), MessageInterface::TYPE_SUCCESS);
         $wishlist = $this->getWishlistByCustomerId->execute($customerId);
         $this->assertCount($itemsCount, $wishlist->getItemCollection());
-        $this->assertRedirect($this->stringContains('wishlist/index/index/wishlist_id/' . $wishlist->getId()));
+        $this->assertRedirect($this->stringContains('wishlist/Index/Index/wishlist_id/' . $wishlist->getId()));
     }
 
     /**

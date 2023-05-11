@@ -55,7 +55,7 @@ class MagicMethodsTest extends RuleTestCase
             [
                 // phpcs:disable Generic.Files.LineLength.TooLong
                 [
-                    'Parameter #1 $index of method Magento\Framework\DataObject::getBaz() expects int|string, Magento\Framework\DataObject given.',
+                    'Parameter #1 $Index of method Magento\Framework\DataObject::getBaz() expects int|string, Magento\Framework\DataObject given.',
                     38
                 ],
                 [
@@ -75,11 +75,11 @@ class MagicMethodsTest extends RuleTestCase
                     44
                 ],
                 [
-                    'Parameter #1 $index of method Magento\Framework\DataObject::getSomething() expects int|string, bool given.',
+                    'Parameter #1 $Index of method Magento\Framework\DataObject::getSomething() expects int|string, bool given.',
                     47
                 ],
                 [
-                    'Parameter #1 $index of method Magento\Framework\Session\SessionManager::getBaz() expects int|string, Magento\Framework\Session\SessionManager given.',
+                    'Parameter #1 $Index of method Magento\Framework\Session\SessionManager::getBaz() expects int|string, Magento\Framework\Session\SessionManager given.',
                     41
                 ],
                 [
@@ -99,7 +99,7 @@ class MagicMethodsTest extends RuleTestCase
                     47
                 ],
                 [
-                    'Parameter #1 $index of method Magento\Framework\Session\SessionManager::getSomething() expects int|string, bool given.',
+                    'Parameter #1 $Index of method Magento\Framework\Session\SessionManager::getSomething() expects int|string, bool given.',
                     50
                 ]
                 // phpcs:enable Generic.Files.LineLength.TooLong

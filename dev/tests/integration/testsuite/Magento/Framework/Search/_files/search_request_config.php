@@ -145,6 +145,6 @@ return [
         "from" => "10",
         "size" => "10",
         "query" => "suggested_search_container",
-        "index" => "product",
+        "Index" => "product",
     ]
 ];

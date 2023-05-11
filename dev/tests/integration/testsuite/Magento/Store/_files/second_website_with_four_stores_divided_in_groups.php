@@ -89,7 +89,7 @@ if (!$store->load('fixture_fifth_store', 'code')->getId()) {
     $store->save();
 }
 
-/* Refresh CatalogSearch index */
+/* Refresh CatalogSearch Index */
 /** @var IndexerRegistry $indexerRegistry */
 $indexerRegistry = $objectManager->get(IndexerRegistry::class);
 $indexerRegistry->get(Fulltext::INDEXER_ID)->reindexAll();

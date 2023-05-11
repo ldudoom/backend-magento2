@@ -123,7 +123,7 @@ class GroupTest extends \Magento\TestFramework\TestCase\AbstractBackendControlle
             $this->equalTo(['You deleted the customer group.']),
             MessageInterface::TYPE_SUCCESS
         );
-        $this->assertRedirect($this->stringStartsWith(self::BASE_CONTROLLER_URL . 'index'));
+        $this->assertRedirect($this->stringStartsWith(self::BASE_CONTROLLER_URL . 'Index'));
     }
 
     /**

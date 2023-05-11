@@ -55,7 +55,7 @@ define([
         },
 
         /**
-         * Get tab index by tab id
+         * Get tab Index by tab id
          * @protected
          * @param {String} id - id of tab
          * @return {Number}

@@ -41,7 +41,7 @@ class AddTest extends AbstractBackendController
     public function testExecuteWithoutParams(): void
     {
         $this->dispatch('backend/catalog/category/add');
-        $this->assertRedirect($this->stringContains('catalog/category/index'));
+        $this->assertRedirect($this->stringContains('catalog/category/Index'));
     }
 
     /**

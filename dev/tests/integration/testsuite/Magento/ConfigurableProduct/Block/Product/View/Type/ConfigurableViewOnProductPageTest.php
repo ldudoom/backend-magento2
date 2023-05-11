@@ -270,7 +270,7 @@ class ConfigurableViewOnProductPageTest extends TestCase
     {
         $this->assertEquals((string)__($expectedData['stock_status']), trim(strip_tags($result)));
         $config = $this->json->unserialize($this->block->getJsonConfig());
-        $dataToCheck = ['attributes' => reset($config['attributes']), 'options_data' =>  $config['index']];
+        $dataToCheck = ['attributes' => reset($config['attributes']), 'options_data' =>  $config['Index']];
         $this->assertConfig($dataToCheck, $expectedData['options']);
     }
 

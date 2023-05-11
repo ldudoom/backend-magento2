@@ -27,7 +27,7 @@ class FulltextGridSearchTest extends AbstractBackendController
      */
     public function testSearchByTitle(string $query, int $expectedRows, array $expectedTitles)
     {
-        $url = 'backend/mui/index/render/?namespace=cms_page_listing&search=' . $query;
+        $url = 'backend/mui/Index/render/?namespace=cms_page_listing&search=' . $query;
 
         $this->getRequest()
             ->getHeaders()

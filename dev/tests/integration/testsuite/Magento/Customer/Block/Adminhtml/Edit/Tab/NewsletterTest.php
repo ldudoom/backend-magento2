@@ -64,7 +64,7 @@ class NewsletterTest extends \Magento\TestFramework\TestCase\AbstractBackendCont
     {
         $websiteId = 1;
         $this->getRequest()->setParam('id', 1);
-        $this->dispatch('backend/customer/index/edit');
+        $this->dispatch('backend/customer/Index/edit');
         $body = $this->getResponse()->getBody();
 
         $this->assertStringContainsString('\u003Cspan\u003ENewsletter Information\u003C\/span\u003E', $body);
@@ -85,7 +85,7 @@ class NewsletterTest extends \Magento\TestFramework\TestCase\AbstractBackendCont
     public function testRenderingNewsletterBlockWithQueue()
     {
         $this->getRequest()->setParam('id', 1);
-        $this->dispatch('backend/customer/index/edit');
+        $this->dispatch('backend/customer/Index/edit');
         $body = $this->getResponse()->getBody();
 
         $this->assertMatchesRegularExpression(

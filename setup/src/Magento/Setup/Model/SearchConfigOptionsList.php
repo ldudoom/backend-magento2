@@ -26,7 +26,7 @@ class SearchConfigOptionsList
     public const INPUT_KEY_ELASTICSEARCH_ENABLE_AUTH = 'elasticsearch-enable-auth';
     public const INPUT_KEY_ELASTICSEARCH_USERNAME = 'elasticsearch-username';
     public const INPUT_KEY_ELASTICSEARCH_PASSWORD = 'elasticsearch-password';
-    public const INPUT_KEY_ELASTICSEARCH_INDEX_PREFIX = 'elasticsearch-index-prefix';
+    public const INPUT_KEY_ELASTICSEARCH_INDEX_PREFIX = 'elasticsearch-Index-prefix';
     public const INPUT_KEY_ELASTICSEARCH_TIMEOUT = 'elasticsearch-timeout';
     /**
      * Input key for the OpenSearch options
@@ -36,7 +36,7 @@ class SearchConfigOptionsList
     public const INPUT_KEY_OPENSEARCH_ENABLE_AUTH = 'opensearch-enable-auth';
     public const INPUT_KEY_OPENSEARCH_USERNAME = 'opensearch-username';
     public const INPUT_KEY_OPENSEARCH_PASSWORD = 'opensearch-password';
-    public const INPUT_KEY_OPENSEARCH_INDEX_PREFIX = 'opensearch-index-prefix';
+    public const INPUT_KEY_OPENSEARCH_INDEX_PREFIX = 'opensearch-Index-prefix';
     public const INPUT_KEY_OPENSEARCH_TIMEOUT = 'opensearch-timeout';
 
     /**
@@ -88,7 +88,7 @@ class SearchConfigOptionsList
                 self::INPUT_KEY_ELASTICSEARCH_INDEX_PREFIX,
                 TextConfigOption::FRONTEND_WIZARD_TEXT,
                 '',
-                'Elasticsearch index prefix.'
+                'Elasticsearch Index prefix.'
             ),
             new TextConfigOption(
                 self::INPUT_KEY_ELASTICSEARCH_TIMEOUT,
@@ -130,7 +130,7 @@ class SearchConfigOptionsList
                 self::INPUT_KEY_OPENSEARCH_INDEX_PREFIX,
                 TextConfigOption::FRONTEND_WIZARD_TEXT,
                 '',
-                'OpenSearch index prefix.'
+                'OpenSearch Index prefix.'
             ),
             new TextConfigOption(
                 self::INPUT_KEY_OPENSEARCH_TIMEOUT,

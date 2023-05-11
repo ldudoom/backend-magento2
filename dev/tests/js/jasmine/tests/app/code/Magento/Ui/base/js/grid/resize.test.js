@@ -336,7 +336,7 @@ define([
                 };
                 expect(typeof obj.hasColumn(arg, false)).toEqual('boolean');
             });
-            it('Must return true if object columnsElements has  model.index property', function () {
+            it('Must return true if object columnsElements has  model.Index property', function () {
                 arg = {
                     index: 'magento'
                 };

@@ -43,7 +43,7 @@ class InvalidateTokenTest extends AbstractBackendController
         $customerId = 1;
         $this->getRequest()->setParam('customer_id', $customerId)->setMethod(HttpRequest::METHOD_GET);
         $this->dispatch('backend/customer/customer/invalidateToken');
-        $this->assertRedirect($this->stringContains('backend/customer/index/edit/id/' . $customerId));
+        $this->assertRedirect($this->stringContains('backend/customer/Index/edit/id/' . $customerId));
         $message = $this->escaper->escapeHtml('You have revoked the customer\'s tokens.');
         $this->assertSessionMessages($this->equalTo([(string)__($message)]), MessageInterface::TYPE_SUCCESS);
     }
@@ -55,7 +55,7 @@ class InvalidateTokenTest extends AbstractBackendController
     {
         $this->getRequest()->setMethod(HttpRequest::METHOD_GET);
         $this->dispatch('backend/customer/customer/invalidateToken');
-        $this->assertRedirect($this->stringContains('backend/customer/index/index'));
+        $this->assertRedirect($this->stringContains('backend/customer/Index/Index'));
         $message = $this->escaper->escapeHtml('We can\'t find a customer to revoke.');
         $this->assertSessionMessages($this->equalTo([(string)__($message)]), MessageInterface::TYPE_ERROR);
     }

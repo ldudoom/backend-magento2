@@ -73,7 +73,7 @@ $configResource->saveConfig(
     $websiteId
 );
 
-/* Refresh CatalogSearch index */
+/* Refresh CatalogSearch Index */
 /** @var \Magento\Framework\Indexer\IndexerRegistry $indexerRegistry */
 $indexerRegistry = $objectManager->create(\Magento\Framework\Indexer\IndexerRegistry::class);
 $indexerRegistry->get(FulltextIndex::INDEXER_ID)->reindexAll();

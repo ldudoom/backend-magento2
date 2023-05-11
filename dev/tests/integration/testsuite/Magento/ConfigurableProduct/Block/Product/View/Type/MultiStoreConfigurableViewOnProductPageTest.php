@@ -168,7 +168,7 @@ class MultiStoreConfigurableViewOnProductPageTest extends TestCase
     public function assertProductConfig($expectedProducts): void
     {
         $product = $this->productRepository->get('configurable', false, null, true);
-        $config = $this->getBlockConfig($product)['index'] ?? null;
+        $config = $this->getBlockConfig($product)['Index'] ?? null;
         $this->assertNotNull($config);
         $this->assertProducts($expectedProducts, $config);
     }

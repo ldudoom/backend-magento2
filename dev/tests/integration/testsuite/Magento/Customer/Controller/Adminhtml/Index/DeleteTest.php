@@ -13,7 +13,7 @@ use Magento\Framework\Message\MessageInterface;
 use Magento\TestFramework\TestCase\AbstractBackendController;
 
 /**
- * Tests for delete customer via backend/customer/index/delete controller.
+ * Tests for delete customer via backend/customer/Index/delete controller.
  *
  * @magentoAppArea adminhtml
  */
@@ -46,7 +46,7 @@ class DeleteTest extends AbstractBackendController
     {
         $this->dispatchCustomerDelete($paramsData);
 
-        $this->assertRedirect($this->stringContains('customer/index'));
+        $this->assertRedirect($this->stringContains('customer/Index'));
         $this->assertSessionMessages(
             $this->equalTo([(string)__(...$expected['message'])]),
             $expected['message_type']
@@ -89,7 +89,7 @@ class DeleteTest extends AbstractBackendController
     }
 
     /**
-     * Delete customer using backend/customer/index/delete action.
+     * Delete customer using backend/customer/Index/delete action.
      *
      * @param array $params
      * @return void
@@ -99,6 +99,6 @@ class DeleteTest extends AbstractBackendController
         $params['form_key'] = $this->formKey->getFormKey();
         $this->getRequest()->setMethod(HttpRequest::METHOD_POST);
         $this->getRequest()->setParams($params);
-        $this->dispatch('backend/customer/index/delete');
+        $this->dispatch('backend/customer/Index/delete');
     }
 }

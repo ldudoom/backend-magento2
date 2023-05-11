@@ -46,7 +46,7 @@ abstract class AbstractMultiactionTest extends TestCase
         $this->blockColumn = $this->layout->createBlock(Extended::class);
         $this->blockColumn->setData([
             'header' => 'Action',
-            'index' => 'item_id',
+            'Index' => 'item_id',
             'renderer' => Multiaction::class,
             'filter' => false,
             'sortable' => false,

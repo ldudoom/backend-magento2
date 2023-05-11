@@ -15,7 +15,7 @@ use Magento\CatalogSearch\Model\Indexer\Fulltext\Processor;
 use Magento\Catalog\Api\Data\EavAttributeInterface;
 
 /**
- * Check catalogsearch_fulltext index status after create product attribute.
+ * Check catalogsearch_fulltext Index status after create product attribute.
  */
 class AttributeTest extends TestCase
 {
@@ -39,7 +39,7 @@ class AttributeTest extends TestCase
     }
 
     /**
-     * Check index status on clean database.
+     * Check Index status on clean database.
      *
      * @magentoDataFixture Magento/CatalogSearch/_files/full_reindex.php
      */
@@ -49,7 +49,7 @@ class AttributeTest extends TestCase
     }
 
     /**
-     * Check index status after create non searchable attribute.
+     * Check Index status after create non searchable attribute.
      *
      * @return void
      * @magentoDataFixture Magento/Catalog/_files/dropdown_attribute.php
@@ -62,7 +62,7 @@ class AttributeTest extends TestCase
     }
 
     /**
-     * Check index status after non searchable attribute update.
+     * Check Index status after non searchable attribute update.
      *
      * @return void
      * @magentoDataFixture Magento/Catalog/_files/dropdown_attribute.php
@@ -78,7 +78,7 @@ class AttributeTest extends TestCase
     }
 
     /**
-     * Check index status after create searchable attribute.
+     * Check Index status after create searchable attribute.
      *
      * @return void
      * @magentoDataFixture Magento/CatalogSearch/_files/search_attributes.php
@@ -91,7 +91,7 @@ class AttributeTest extends TestCase
     }
 
     /**
-     * Check index status after update non searchable attribute to searchable.
+     * Check Index status after update non searchable attribute to searchable.
      *
      * @param string $field
      * @return void
@@ -122,7 +122,7 @@ class AttributeTest extends TestCase
     }
 
     /**
-     * Check index status after update searchable attribute to non searchable.
+     * Check Index status after update searchable attribute to non searchable.
      *
      * @return void
      * @magentoDataFixture Magento/CatalogSearch/_files/search_attributes.php

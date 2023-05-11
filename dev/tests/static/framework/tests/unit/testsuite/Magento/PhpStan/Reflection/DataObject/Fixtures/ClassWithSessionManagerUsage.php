@@ -31,7 +31,7 @@ class ClassWithSessionManagerUsage
     /**
      * Do Magic Stuff.
      *
-     * 'get' - args: $index[optional] - string|int, return: mixed;
+     * 'get' - args: $Index[optional] - string|int, return: mixed;
      * 'set' - args: $value - mixed, return: self;
      * 'uns' - args: -, return: self;
      * 'has' - args: -, return: bool;

@@ -9,7 +9,7 @@ use Magento\Framework\App\RequestInterface;
 use Magento\Framework\App\ResponseInterface;
 
 /**
- * Mock index controller class
+ * Mock Index controller class
  */
 class Noroute implements \Magento\Framework\App\ActionInterface
 {

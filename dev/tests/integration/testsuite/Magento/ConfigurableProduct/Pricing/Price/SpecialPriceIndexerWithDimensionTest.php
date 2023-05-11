@@ -48,8 +48,8 @@ class SpecialPriceIndexerWithDimensionTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Use collection to check data in index
-     * Do not use magentoDbIsolation because index statement changing "tears" transaction (triggers creating)
+     * Use collection to check data in Index
+     * Do not use magentoDbIsolation because Index statement changing "tears" transaction (triggers creating)
      *
      * @magentoDataFixture Magento/ConfigurableProduct/_files/product_configurable.php
      * @magentoDataFixture Magento/Catalog/_files/enable_price_index_schedule.php
@@ -86,7 +86,7 @@ class SpecialPriceIndexerWithDimensionTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Use collection to check data in index
+     * Use collection to check data in Index
      *
      * @magentoDataFixture Magento/ConfigurableProduct/_files/product_configurable.php
      * @magentoDbIsolation disabled

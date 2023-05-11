@@ -249,7 +249,7 @@ return [
                     'onDelete' => 'NO ACTION',
                 ],
             ],
-            'index' => [
+            'Index' => [
                 'TEST_TABLE_INDEX' => [
                     'column' => [
                         'tinyint' => 'tinyint',

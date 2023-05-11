@@ -7,22 +7,22 @@
 // @codingStandardsIgnoreStart
 /**
  * Script to operate on a test suite defined in a phpunit configuration xml or xml.dist file; split the tests
- * in the suite into groups by required size; return total number of groups or generate phpunit_<index>.xml file
- * that defines a new test suite named group_<index> with tests in group <index>
+ * in the suite into groups by required size; return total number of groups or generate phpunit_<Index>.xml file
+ * that defines a new test suite named group_<Index> with tests in group <Index>
  *
  * Common scenario:
  *
  * 1. Query how many groups in a test suite with a given size --group-size=<size>
  *    php phpunitGroupConfig.php --get-total --configuration=<path-to-phpunit-xml-dist-file> --test-suite=<name> --group-size=<size> --isolate-tests=<path-to-isolate-tests-file>
  *
- * 2a. Generate the configuration file for group <index>. <index> must be in range of [1, total number of groups])
- *    php phpunitGroupConfig.php --get-group=<index> --configuration=<path-to-phpunit-xml-dist-file> --test-suite=<name> --group-size=<size> --isolate-tests=<path-to-isolate-tests-file>
+ * 2a. Generate the configuration file for group <Index>. <Index> must be in range of [1, total number of groups])
+ *    php phpunitGroupConfig.php --get-group=<Index> --configuration=<path-to-phpunit-xml-dist-file> --test-suite=<name> --group-size=<size> --isolate-tests=<path-to-isolate-tests-file>
  *
  * 2b. Or generate configuration files for all test groups at once
  *    php phpunitGroupConfig.php --get-group=all --configuration=<path-to-phpunit-xml-dist-file> --test-suite=<name> --group-size=<size> --isolate-tests=<path-to-isolate-tests-file>
  *
- * 3. PHPUnit command to run tests for group at <index>
- *    phpunit --configuration <path_to_phpunit_<index>.xml> --testsuite group_<index>
+ * 3. PHPUnit command to run tests for group at <Index>
+ *    phpunit --configuration <path_to_phpunit_<Index>.xml> --testsuite group_<Index>
  */
 
 $scriptName = basename(__FILE__);

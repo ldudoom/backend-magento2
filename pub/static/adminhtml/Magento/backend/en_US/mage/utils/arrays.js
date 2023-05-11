@@ -10,9 +10,9 @@ define([
     'use strict';
 
     /**
-     * Defines index of an item in a specified container.
+     * Defines Index of an item in a specified container.
      *
-     * @param {*} item - Item whose index should be defined.
+     * @param {*} item - Item whose Index should be defined.
      * @param {Array} container - Container upon which to perform search.
      * @returns {Number}
      */
@@ -89,7 +89,7 @@ define([
          * @param {Array} container - Container of items.
          * @param {*} [position=-1] - Position at which item should be inserted.
          *      Position can represent:
-         *          - specific index in container
+         *          - specific Index in container
          *          - item which might already be present in container
          *          - structure with one of these properties: after, before
          * @returns {Boolean|*}

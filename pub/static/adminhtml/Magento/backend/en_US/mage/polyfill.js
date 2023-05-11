@@ -127,7 +127,7 @@
                 },
 
                 /**
-                 * Gets an item by index from storage
+                 * Gets an item by Index from storage
                  * @param {Integer} i
                  */
                 key: function (i) {

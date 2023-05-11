@@ -64,7 +64,7 @@ class SearchConfigOptionsListTest extends TestCase
 
         $this->assertArrayHasKey(6, $optionsList);
         $this->assertInstanceOf(TextConfigOption::class, $optionsList[6]);
-        $this->assertEquals('elasticsearch-index-prefix', $optionsList[6]->getName());
+        $this->assertEquals('elasticsearch-Index-prefix', $optionsList[6]->getName());
 
         $this->assertArrayHasKey(7, $optionsList);
         $this->assertInstanceOf(TextConfigOption::class, $optionsList[7]);
@@ -92,7 +92,7 @@ class SearchConfigOptionsListTest extends TestCase
 
         $this->assertArrayHasKey(13, $optionsList);
         $this->assertInstanceOf(TextConfigOption::class, $optionsList[13]);
-        $this->assertEquals('opensearch-index-prefix', $optionsList[13]->getName());
+        $this->assertEquals('opensearch-Index-prefix', $optionsList[13]->getName());
 
         $this->assertArrayHasKey(14, $optionsList);
         $this->assertInstanceOf(TextConfigOption::class, $optionsList[14]);

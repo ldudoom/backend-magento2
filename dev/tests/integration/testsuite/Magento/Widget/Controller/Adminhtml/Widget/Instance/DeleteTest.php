@@ -51,6 +51,6 @@ class DeleteTest extends AbstractBackendController
             $this->containsEqual((string)__('The widget instance has been deleted.')),
             MessageInterface::TYPE_SUCCESS
         );
-        $this->assertRedirect($this->stringContains('admin/widget_instance/index'));
+        $this->assertRedirect($this->stringContains('admin/widget_instance/Index'));
     }
 }

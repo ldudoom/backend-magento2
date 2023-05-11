@@ -141,7 +141,7 @@ class AbstractTest extends TestCase
         $this->assertEquals($this->product->getId(), $data['product']);
         $this->assertArrayHasKey('uenc', $data);
         $this->assertStringEndsWith(
-            'wishlist/index/add/',
+            'wishlist/Index/add/',
             $params['action']
         );
     }

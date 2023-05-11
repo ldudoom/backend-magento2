@@ -60,7 +60,7 @@ class DeleteTest extends AbstractBackendController
             $this->containsEqual((string)__('You deleted the block.')),
             MessageInterface::TYPE_SUCCESS
         );
-        $this->assertRedirect($this->stringContains('cms/block/index'));
+        $this->assertRedirect($this->stringContains('cms/block/Index'));
         $collection = $this->collectionFactory->getReport('cms_block_listing_data_source');
         $this->assertNull($collection->getItemByColumnValue(BlockInterface::IDENTIFIER, 'default_store_block'));
     }

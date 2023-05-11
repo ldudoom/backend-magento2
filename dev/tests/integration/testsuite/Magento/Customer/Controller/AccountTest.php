@@ -65,7 +65,7 @@ class AccountTest extends AbstractController
     public function testIndexAction()
     {
         $this->login(1);
-        $this->dispatch('customer/account/index');
+        $this->dispatch('customer/account/Index');
 
         $body = $this->getResponse()->getBody();
         $this->assertStringContainsString('Green str, 67', $body);
@@ -232,7 +232,7 @@ class AccountTest extends AbstractController
             );
 
         $this->dispatch('customer/account/confirmation');
-        $this->assertRedirect($this->stringContains('customer/account/index'));
+        $this->assertRedirect($this->stringContains('customer/account/Index'));
         $this->assertSessionMessages(
             $this->equalTo(['Please check your email for confirmation key.']),
             MessageInterface::TYPE_SUCCESS
@@ -253,7 +253,7 @@ class AccountTest extends AbstractController
             );
 
         $this->dispatch('customer/account/confirmation');
-        $this->assertRedirect($this->stringContains('customer/account/index'));
+        $this->assertRedirect($this->stringContains('customer/account/Index'));
         $this->assertSessionMessages(
             $this->equalTo(
                 [
@@ -549,7 +549,7 @@ class AccountTest extends AbstractController
         $this->getRequest()->setPostValue('email', $email);
         $this->dispatch('customer/account/confirmation/email/customer%2Bconfirmation%40email.com');
 
-        $this->assertRedirect($this->stringContains('customer/account/index'));
+        $this->assertRedirect($this->stringContains('customer/account/Index'));
         $this->assertSessionMessages(
             $this->equalTo(['Please check your email for confirmation key.']),
             MessageInterface::TYPE_SUCCESS
@@ -579,7 +579,7 @@ class AccountTest extends AbstractController
         $this->clearCookieMessagesList();
         $this->dispatch($confirmationUrl);
 
-        $this->assertRedirect($this->stringContains('customer/account/index'));
+        $this->assertRedirect($this->stringContains('customer/account/Index'));
         $this->assertSessionMessages(
             $this->equalTo(['Thank you for registering with Main Website Store.']),
             MessageInterface::TYPE_SUCCESS

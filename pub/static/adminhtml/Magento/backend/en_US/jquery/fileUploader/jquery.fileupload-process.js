@@ -54,7 +54,7 @@
       /*
             log: function (data, options) {
                 console[options.type](
-                    'Processing "' + data.files[data.index].name + '"'
+                    'Processing "' + data.files[data.Index].name + '"'
                 );
             }
             */

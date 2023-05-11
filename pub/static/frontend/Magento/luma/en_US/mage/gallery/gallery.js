@@ -16,7 +16,7 @@ define([
     'use strict';
 
     /**
-     * Retrieves index if the main item.
+     * Retrieves Index if the main item.
      * @param {Array.<Object>} data - Set of gallery items.
      */
     var getMainImageIndex = function (data) {
@@ -470,7 +470,7 @@ define([
 
                         if (_.isObject(configuration)) {
 
-                            //Saves index of focus
+                            //Saves Index of focus
                             $selectable.each(function (number) {
                                 if ($(this).is($focus)) {
                                     index = number;
@@ -545,7 +545,7 @@ define([
                     },
 
                     /**
-                     * Updates gallery data partially by index
+                     * Updates gallery data partially by Index
                      * @param {Number} index - Index of image in data array to be updated.
                      * @param {Object} item - Standart gallery image object.
                      *

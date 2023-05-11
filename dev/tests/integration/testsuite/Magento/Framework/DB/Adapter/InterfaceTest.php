@@ -92,17 +92,17 @@ class InterfaceTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(
             ['column1'],
             $this->_getIndexColumns($this->_tableName, $this->_oneColumnIdxName),
-            'Single-column index must be provided by the fixture.'
+            'Single-column Index must be provided by the fixture.'
         );
         $this->assertEquals(
             ['column1', 'column2'],
             $this->_getIndexColumns($this->_tableName, $this->_twoColumnIdxName),
-            'Multiple-column index must be provided by the fixture.'
+            'Multiple-column Index must be provided by the fixture.'
         );
     }
 
     /**
-     * Retrieve list of columns used for an index or return false, if an index with a given name does not exist
+     * Retrieve list of columns used for an Index or return false, if an Index with a given name does not exist
      *
      * @param string $tableName
      * @param string $indexName
@@ -136,7 +136,7 @@ class InterfaceTest extends \PHPUnit\Framework\TestCase
         $this->_connection->dropColumn($this->_tableName, 'column1');
         $this->assertFalse(
             $this->_getIndexColumns($this->_tableName, $this->_oneColumnIdxName),
-            'Column index must be dropped along with the column.'
+            'Column Index must be dropped along with the column.'
         );
         $this->assertEquals(
             ['column2'],
@@ -154,11 +154,11 @@ class InterfaceTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(
             ['column1'],
             $this->_getIndexColumns($this->_tableName, $this->_oneColumnIdxName),
-            'Column index must be preserved.'
+            'Column Index must be preserved.'
         );
         $this->assertFalse(
             $this->_getIndexColumns($this->_tableName, $this->_twoColumnIdxName),
-            'Multiple-column index must be dropped to not duplicate existing index by indexed columns.'
+            'Multiple-column Index must be dropped to not duplicate existing Index by indexed columns.'
         );
     }
 

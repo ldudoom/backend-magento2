@@ -5,7 +5,7 @@
 
 define([
     'tests/assets/tools',
-    'tests/assets/script/index',
+    'tests/assets/script/Index',
     'mage/apply/scripts'
 ], function (tools, config, processScripts) {
     'use strict';

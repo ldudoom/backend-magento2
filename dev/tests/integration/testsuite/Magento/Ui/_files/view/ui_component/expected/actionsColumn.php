@@ -80,8 +80,8 @@ return [
                                                         ],
                                                     ],
                                                 ],
-                                                'index' => [
-                                                    'name' => 'index',
+                                                'Index' => [
+                                                    'name' => 'Index',
                                                     'xsi:type' => 'string',
                                                     'value' => '0'
                                                 ],

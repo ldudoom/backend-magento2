@@ -214,7 +214,7 @@ class CategoriesFixture extends Fixture
     }
 
     /**
-     * Get next category index, which will be used as index of first-level category
+     * Get next category Index, which will be used as Index of first-level category
      *
      * @return int
      */

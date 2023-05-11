@@ -34,7 +34,7 @@ class DataRetrieverTest extends TestCase
 
     /**
      * Test retrieve products data for reports by entity id's
-     * Do not use magentoDbIsolation because index statement changing "tears" transaction (triggers creating)
+     * Do not use magentoDbIsolation because Index statement changing "tears" transaction (triggers creating)
      *
      * @magentoDataFixture Magento/Catalog/_files/product_simple.php
      * @magentoConfigFixture default/reports/options/enabled 1

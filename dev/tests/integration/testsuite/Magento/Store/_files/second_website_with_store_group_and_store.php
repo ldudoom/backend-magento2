@@ -54,7 +54,7 @@ $store->setCode('fixture_second_store')
     ->setSortOrder(10)
     ->setIsActive(1);
 $storeResource->save($store);
-/* Refresh CatalogSearch index */
+/* Refresh CatalogSearch Index */
 /** @var IndexerRegistry $indexerRegistry */
 $storeManager->reinitStores();
 $indexerRegistry = $objectManager->get(IndexerRegistry::class);

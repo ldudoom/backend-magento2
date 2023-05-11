@@ -116,7 +116,7 @@ class ValidationRulesTest extends SetupTestCase
     public function testFailOnInvalidAutoIncrementField()
     {
         $this->expectException(LocalizedException::class);
-        $this->expectExceptionMessageMatches('/Auto Increment column do not have index. Column - "page_id"/');
+        $this->expectExceptionMessageMatches('/Auto Increment column do not have Index. Column - "page_id"/');
 
         $this->cliCommad->install(
             ['Magento_TestSetupDeclarationModule8']

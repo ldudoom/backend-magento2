@@ -97,7 +97,7 @@ class ElasticsearchTest extends TestCase
     }
 
     /**
-     * Tests possibility to create mapping if adapter has obsolete index name in cache
+     * Tests possibility to create mapping if adapter has obsolete Index name in cache
      *
      * @magentoDataFixture Magento/Elasticsearch/_files/select_attribute.php
      * @return void
@@ -107,7 +107,7 @@ class ElasticsearchTest extends TestCase
         $this->reindex();
         $this->updateElasticsearchIndex();
         $this->createNewAttribute();
-        $mapping = $this->client->getMapping(['index' => $this->newIndex]);
+        $mapping = $this->client->getMapping(['Index' => $this->newIndex]);
         $pathField = $this->arrayManager->findPath('properties', $mapping);
         $attributes = $this->arrayManager->get($pathField, $mapping, []);
         $this->assertArrayHasKey('multiselect_attribute', $attributes);
@@ -124,7 +124,7 @@ class ElasticsearchTest extends TestCase
     {
         $index = 'catalogsearch_fulltext';
         $storeId = (int) $this->storeManager->getStore('fixture_second_store')->getId();
-        // Create empty index and save the initial mapping
+        // Create empty Index and save the initial mapping
         $dimensionFactory = $this->objectManager->get(DimensionFactory::class);
         $dimensions = [
             StoreDimensionProvider::DIMENSION_NAME => $dimensionFactory->create(
@@ -198,7 +198,7 @@ class ElasticsearchTest extends TestCase
     }
 
     /**
-     * Prepare new index and delete old. Keep cache alive.
+     * Prepare new Index and delete old. Keep cache alive.
      *
      * @return void
      */
@@ -221,7 +221,7 @@ class ElasticsearchTest extends TestCase
     }
 
     /**
-     * Delete index by name if exists
+     * Delete Index by name if exists
      *
      * @param $newIndex
      */
@@ -249,7 +249,7 @@ class ElasticsearchTest extends TestCase
     private function getIndexMapping(int $storeId): array
     {
         $indexName = $this->indexNameResolver->getIndexName($storeId, 'product', []);
-        $mapping = $this->client->getMapping(['index' => $indexName]);
+        $mapping = $this->client->getMapping(['Index' => $indexName]);
         $pathField = $this->arrayManager->findPath('properties', $mapping);
         return $this->arrayManager->get($pathField, $mapping, []);
     }

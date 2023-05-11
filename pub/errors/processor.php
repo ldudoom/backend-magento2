@@ -345,7 +345,7 @@ class Processor
     }
 
     /**
-     * Get index dir
+     * Get Index dir
      *
      * @return string
      */

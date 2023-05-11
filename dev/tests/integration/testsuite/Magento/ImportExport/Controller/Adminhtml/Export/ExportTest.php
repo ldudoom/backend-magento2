@@ -94,7 +94,7 @@ class ExportTest extends AbstractBackendController
             );
         $this->dispatch('backend/admin/export/export');
         $this->assertSessionMessages($this->containsEqual($expectedSessionMessage));
-        $this->assertRedirect($this->stringContains('/export/index/key/'));
+        $this->assertRedirect($this->stringContains('/export/Index/key/'));
         $queue = $this->queueRepository->get($this->defaultValueProvider->getConnection(), 'export');
         /** @var Envelope $message */
         $message = $queue->dequeue();

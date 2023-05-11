@@ -44,7 +44,7 @@ class Generator extends AbstractSource
     protected $_variables = [];
 
     /**
-     * Current index
+     * Current Index
      *
      * @var int
      */
@@ -73,7 +73,7 @@ class Generator extends AbstractSource
     }
 
     /**
-     * Get row index for template
+     * Get row Index for template
      *
      * @param int $key
      *

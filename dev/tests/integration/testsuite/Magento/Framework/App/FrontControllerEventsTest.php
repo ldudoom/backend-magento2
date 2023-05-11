@@ -57,7 +57,7 @@ class FrontControllerEventsTest extends TestCase
 
         /** @var FrontControllerInterface $frontController */
         $frontController = ObjectManager::getInstance()->create(FrontControllerInterface::class);
-        $this->configureRequestForAction('cms', 'index', 'index');
+        $this->configureRequestForAction('cms', 'Index', 'Index');
         $frontController->dispatch($this->request);
 
         $this->assertPreAndPostDispatchEventsAreDispatched();
@@ -76,7 +76,7 @@ class FrontControllerEventsTest extends TestCase
 
         /** @var FrontControllerInterface $frontController */
         $frontController = ObjectManager::getInstance()->create(FrontControllerInterface::class);
-        $this->configureRequestForAction('cms', 'index', 'index');
+        $this->configureRequestForAction('cms', 'Index', 'Index');
 
         /** @var ActionFlag $actionFlag */
         $actionFlag = ObjectManager::getInstance()->get(ActionFlag::class);

@@ -27,7 +27,7 @@ return ['arguments' => [
             'client_root' => [
                 'name' => 'client_root',
                 'xsi:type' => 'string',
-                'value' => 'mui/index/render',
+                'value' => 'mui/Index/render',
             ],
             'template' => [
                 'name' => 'template',
@@ -94,7 +94,7 @@ return ['arguments' => [
                                         'update_url' => [
                                             'name' => 'update_url',
                                             'xsi:type' => 'url',
-                                            'path' => 'mui/index/render',
+                                            'path' => 'mui/Index/render',
                                         ],
                                         'component' => [
                                             'name' => 'component',
@@ -163,7 +163,7 @@ return ['arguments' => [
                                 'link' => [
                                     'name' => 'link',
                                     'xsi:type' => 'url',
-                                    'path' => 'bulk/index',
+                                    'path' => 'bulk/Index',
                                 ],
                                 'linkText' => [
                                     'name' => 'linkText',
@@ -338,12 +338,12 @@ return ['arguments' => [
                                                             'value' => '1',
                                                         ],
                                                     ],
-                                                    'path' => 'mui/index/render_handle',
+                                                    'path' => 'mui/Index/render_handle',
                                                 ],
                                                 'columnsProvider' => [
                                                     'name' => 'columnsProvider',
                                                     'xsi:type' => 'string',
-                                                    'value' => 'ns = test_component, index = columns',
+                                                    'value' => 'ns = test_component, Index = columns',
                                                 ],
                                                 'component' => [
                                                     'name' => 'component',

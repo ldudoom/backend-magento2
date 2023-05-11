@@ -51,7 +51,7 @@ class EditTest extends AbstractBackendController
         $storeId = (int)$this->storeManager->getStore('default')->getId();
         $this->getRequest()->setParams(['store' => $storeId, 'id' => $id]);
         $this->dispatch('backend/catalog/category/edit');
-        $this->assertRedirect($this->stringContains('backend/catalog/category/index'));
+        $this->assertRedirect($this->stringContains('backend/catalog/category/Index'));
         $this->assertStringNotContainsString('/id/', $this->getResponse()->getHeader('Location')->getFieldValue());
     }
 

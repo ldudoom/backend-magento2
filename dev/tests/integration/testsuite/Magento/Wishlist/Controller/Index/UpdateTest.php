@@ -61,7 +61,7 @@ class UpdateTest extends AbstractController
         $this->performUpdateWishListItemRequest($params);
         $message = sprintf("%s has been updated in your Wish List.", $item->getProduct()->getName());
         $this->assertSessionMessages($this->equalTo([(string)__($message)]), MessageInterface::TYPE_SUCCESS);
-        $this->assertRedirect($this->stringContains('wishlist/index/index/wishlist_id/' . $item->getWishlistId()));
+        $this->assertRedirect($this->stringContains('wishlist/Index/Index/wishlist_id/' . $item->getWishlistId()));
         $updatedItem = $this->getWishlistByCustomerId->getItemBySku(1, 'simple');
         $this->assertNotNull($updatedItem);
         $this->assertEquals(5, $updatedItem->getQty());
@@ -80,7 +80,7 @@ class UpdateTest extends AbstractController
         $this->performUpdateWishListItemRequest($params);
         $message = sprintf("%s has been updated in your Wish List.", $item->getProduct()->getName());
         $this->assertSessionMessages($this->equalTo([(string)__($message)]), MessageInterface::TYPE_SUCCESS);
-        $this->assertRedirect($this->stringContains('wishlist/index/index/wishlist_id/' . $item->getWishlistId()));
+        $this->assertRedirect($this->stringContains('wishlist/Index/Index/wishlist_id/' . $item->getWishlistId()));
         $this->assertCount(0, $this->getWishlistByCustomerId->execute(1)->getItemCollection());
     }
 
@@ -93,6 +93,6 @@ class UpdateTest extends AbstractController
     private function performUpdateWishListItemRequest(array $params): void
     {
         $this->getRequest()->setPostValue($params)->setMethod(HttpRequest::METHOD_POST);
-        $this->dispatch('wishlist/index/update');
+        $this->dispatch('wishlist/Index/update');
     }
 }

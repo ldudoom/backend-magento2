@@ -22,7 +22,7 @@ use Magento\TestModuleCatalogSearch\Model\SearchEngineVersionReader;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Important: Please make sure that each integration test file works with unique search index. In order to
+ * Important: Please make sure that each integration test file works with unique search Index. In order to
  * achieve this, use @magentoConfigFixture to pass unique value for index_prefix for every test
  * method. E.g. '@magentoConfigFixture current_store catalog/search/elasticsearch7_index_prefix indexerhandlertest'
  *
@@ -246,7 +246,7 @@ class IndexHandlerTest extends TestCase
     {
         $index = $this->searchIndexNameResolver->getIndexName($storeId, $this->indexer->getId());
         $searchQuery = [
-            'index' => $index,
+            'Index' => $index,
             'type' => $this->entityType,
             'body' => [
                 'query' => [
@@ -280,7 +280,7 @@ class IndexHandlerTest extends TestCase
     {
         $index = $this->searchIndexNameResolver->getIndexName($storeId, $this->indexer->getId());
         $searchQuery = [
-            'index' => $index,
+            'Index' => $index,
             'type' => $this->entityType,
             'body' => [
                 'query' => [

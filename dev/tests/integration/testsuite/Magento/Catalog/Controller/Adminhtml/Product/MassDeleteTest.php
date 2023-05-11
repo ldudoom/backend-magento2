@@ -107,7 +107,7 @@ class MassDeleteTest extends AbstractBackendController
     {
         $this->dispatchMassDeleteAction([989]);
         $this->assertSessionMessages($this->isEmpty(), MessageInterface::TYPE_ERROR);
-        $this->assertRedirect($this->stringContains('backend/catalog/product/index'));
+        $this->assertRedirect($this->stringContains('backend/catalog/product/Index'));
     }
 
     /**
@@ -121,7 +121,7 @@ class MassDeleteTest extends AbstractBackendController
             $this->equalTo('An item needs to be selected. Select and try again.'),
             MessageInterface::TYPE_ERROR
         );
-        $this->assertRedirect($this->stringContains('backend/catalog/product/index'));
+        $this->assertRedirect($this->stringContains('backend/catalog/product/Index'));
     }
 
     /**
@@ -136,7 +136,7 @@ class MassDeleteTest extends AbstractBackendController
             $this->equalTo([(string)__('A total of %1 record(s) have been deleted.', $productCount)]),
             MessageInterface::TYPE_SUCCESS
         );
-        $this->assertRedirect($this->stringContains('backend/catalog/product/index'));
+        $this->assertRedirect($this->stringContains('backend/catalog/product/Index'));
     }
 
     /**

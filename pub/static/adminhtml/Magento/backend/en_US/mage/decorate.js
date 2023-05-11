@@ -37,7 +37,7 @@ define([
 
             if (elements) {
                 allSupportedParams = {
-                    even: 'odd', // Flip jQuery odd/even so that index 0 is odd.
+                    even: 'odd', // Flip jQuery odd/even so that Index 0 is odd.
                     odd: 'even',
                     last: 'last',
                     first: 'first'

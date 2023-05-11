@@ -14,7 +14,7 @@ use Magento\Store\Model\StoreManagerInterface;
 use Magento\TestFramework\TestCase\AbstractBackendController;
 
 /**
- * Class checks create order index controller.
+ * Class checks create order Index controller.
  *
  * @see \Magento\Sales\Controller\Adminhtml\Order\Create\Index
  *
@@ -58,7 +58,7 @@ class IndexTest extends AbstractBackendController
         $this->getRequest()->setParam('customer_id', $customerId);
         $this->quoteSession->setOrderId($editingOrderId);
         $this->assertEquals($editingOrderId, $this->quoteSession->getOrderId());
-        $this->dispatch('backend/sales/order_create/index');
+        $this->dispatch('backend/sales/order_create/Index');
 
         // Check that existing order in session was cleared
         $this->assertEquals(null, $this->quoteSession->getOrderId());

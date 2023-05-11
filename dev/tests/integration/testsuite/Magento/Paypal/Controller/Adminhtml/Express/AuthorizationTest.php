@@ -45,7 +45,7 @@ class AuthorizationTest extends \Magento\TestFramework\TestCase\AbstractBackendC
     public function testNoOrderPassed()
     {
         $this->dispatch('backend/paypal/express/authorization');
-        $this->assertRedirect($this->stringContains('backend/sales/order/index'));
+        $this->assertRedirect($this->stringContains('backend/sales/order/Index'));
     }
 
     /**

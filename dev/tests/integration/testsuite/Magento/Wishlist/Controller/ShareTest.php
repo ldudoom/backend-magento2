@@ -29,7 +29,7 @@ class ShareTest extends AbstractController
     {
         $this->login(1);
         $this->prepareRequestData();
-        $this->dispatch('wishlist/index/send/');
+        $this->dispatch('wishlist/Index/send/');
 
         $this->assertSessionMessages(
             $this->equalTo(['Your wish list has been shared.']),
@@ -46,7 +46,7 @@ class ShareTest extends AbstractController
     {
         $this->login(1);
         $this->prepareRequestData(true);
-        $this->dispatch('wishlist/index/send/');
+        $this->dispatch('wishlist/Index/send/');
 
         $this->assertSessionMessages(
             $this->equalTo(['Please enter an email address.']),

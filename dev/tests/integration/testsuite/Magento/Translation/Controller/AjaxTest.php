@@ -28,7 +28,7 @@ class AjaxTest extends \Magento\TestFramework\TestCase\AbstractController
     public function testIndexAction(array $postData, string $expected): void
     {
         $this->getRequest()->setPostValue('translate', $postData);
-        $this->dispatch('translation/ajax/index');
+        $this->dispatch('translation/ajax/Index');
         $result = $this->getResponse()->getBody();
         $this->assertEquals($expected, $result);
     }

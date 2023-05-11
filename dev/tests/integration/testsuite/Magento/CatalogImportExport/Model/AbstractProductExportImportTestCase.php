@@ -206,7 +206,7 @@ abstract class AbstractProductExportImportTestCase extends \PHPUnit\Framework\Te
             $stockRegistryStorage->removeStockItem($ids[$index]);
             $newProduct = $productRepository->get($skus[$index], false, Store::DEFAULT_STORE_ID, true);
             // @todo uncomment or remove after MAGETWO-49806 resolved
-            //$this->assertEquals(count($origProductData[$index]), count($newProductData));
+            //$this->assertEquals(count($origProductData[$Index]), count($newProductData));
 
             $this->assertEqualsOtherThanSkippedAttributes(
                 $origProducts[$index]->getData(),
@@ -375,7 +375,7 @@ abstract class AbstractProductExportImportTestCase extends \PHPUnit\Framework\Te
 
             // check new product data
             // @todo uncomment or remove after MAGETWO-49806 resolved
-            //$this->assertEquals(count($origProductData[$index]), count($newProductData));
+            //$this->assertEquals(count($origProductData[$Index]), count($newProductData));
 
             $origProductData = $origProducts[$index]->getData();
             $newProductData = $newProduct->getData();

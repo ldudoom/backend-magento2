@@ -145,7 +145,7 @@ class SearchConfigTest extends TestCase
                     'elasticsearch-host' => 'localhost',
                     'elasticsearch-port' => '9200',
                     'elasticsearch-enable-auth' => false,
-                    'elasticsearch-index-prefix' => 'magento2',
+                    'elasticsearch-Index-prefix' => 'magento2',
                     'elasticsearch-timeout' => 15,
                     'no-interaction' => false,
                 ],
@@ -154,7 +154,7 @@ class SearchConfigTest extends TestCase
                     'elasticsearch-host' => 'localhost',
                     'elasticsearch-port' => '9200',
                     'elasticsearch-enable-auth' => false,
-                    'elasticsearch-index-prefix' => 'magento2',
+                    'elasticsearch-Index-prefix' => 'magento2',
                     'elasticsearch-timeout' => 15,
                 ]
             ]

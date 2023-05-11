@@ -14,7 +14,7 @@ use Magento\Framework\Indexer\DimensionFactory;
 use Magento\Store\Model\Indexer\WebsiteDimensionProvider;
 
 /**
- * Search and return price data from price index table.
+ * Search and return price data from price Index table.
  */
 class GetPriceIndexDataByProductId
 {
