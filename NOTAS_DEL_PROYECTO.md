@@ -453,3 +453,57 @@ $ rm -Rf var/cache var/view_preprocessed
 $ php bin/magento indexer:reindex && php bin/magento se:up && php bin/magento se:s:d -f && php bin/magento c:f
 ```
 Ahora ya podemos ir a verificar el resultado final de estas configuraciones en nuestro Magento
+
+
+
+## SYSTEM.XML
+
+Básicamente, esto nos sirve para poder crear configuraciones personalizadas en Magento, y que estos parametros de configuraci&oacute;n que generamos, 
+los podamos usar en cualquier parte del desarrollo que estemos haciendo, tanto para m&oacute;dulos de frontend como para m&oacute;dulos de backend.
+
+Para esto, vamos a construir un archivo llamado **system.xml** donde generaremos toda la configuraci&oacute;n que necesitamos para hacer nuestra personalizaci&oacute;n
+
+
+1. Creamos el archivo **system.xml**
+
+    ```shell
+    $ touch app/code/Buhoo/ModuloBasico/etc/adminhtml/system.xml
+    ```
+
+2. Colocamos el siguiente codigo en el archivo
+
+    ```xml
+    <?xml version="1.0"?>
+    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+        <system>
+            <tab id="buhootab" translate="label" sortOrder="80">
+                <label>Buhoo Tab</label>
+            </tab>
+            <section id="buhoosection" translate="label" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Buhoo Section</label>
+                <tab>buhootab</tab>
+                <resource>Buhoo_ModuloBasico::config_buhoo</resource>
+                <group id="buhoogroup" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Config Page Group</label>
+                    <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Is Enabled</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="title" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Title Buhoo</label>
+                    </field>
+                </group>
+            </section>
+        </system>
+    </config>
+    ```
+
+3. Una vez que tenemos listo el archivo, vamos a renderizar nuestro proyecto, limpiar cache, etc.
+
+    ```shell
+    # Eliminamos los directorios /var/cache y /var/view_preprocessed/
+    $ rm -Rf var/cache var/view_preprocessed
+    
+    # Ahora ejecutamos una serie de comandos que referscan y renderizan todo en el proyecto de Magento, para que podamos ver nuestro desarrollo
+    $ php bin/magento se:up && php bin/magento indexer:reindex && php bin/magento se:s:d -f && php bin/magento c:f
+    ```
