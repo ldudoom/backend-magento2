@@ -260,3 +260,196 @@ $ touch app/code/Buhoo/ModuloBasico/Block/Buhoo.php
     $ php bin/magento indexer:reindex && php bin/magento se:up && php bin/magento se:s:d -f && php bin/magento c:f
     ```
     Ahora ya podemos ir a verificar como quedo nuestra pagina personalizada en la URL http://myapp.magento.com/buhoo
+
+
+
+## Desarrollo para Backend
+***
+
+Magento por defecto tiene habilitados muchos niveles de seguridad, sobre todo en el backend, incluido un hash para asegurar las URLs, de esta manera
+siempre se genera una URL aleatoriamente. Sin embargo, mientras hacemos el desarrollo de un modulo de backend, vamos a deshabilitar esta opcion.
+
+1. Vamos a ingresar al panel de administración de Magento, en nuestro caso es http://myapp.magento.com/admin 
+2. Ingresamos utilizando las credenciales con las que instalamos nuestro Magento
+3. Vamos a seleccionar en el menu del lado izquierdo **"Stores -> Settings -> Configuration"**
+4. Una vez que estamos en esta pantalla seleccionamos **"ADVANCED -> Admin"**
+5. Ahora buscamos y desplegamos la sección **"Security"**
+6. Colocamos el valor de **"NO"** en la opción **"Add Secret Key to URLs"**
+7. Guardamos este cambio en la configuración
+8. Limpiamos el cache del proyecto desde la consola con el comando ```$ php bin/magento c:f```, o directamente desde el panel de administracion
+
+
+Ahora si podemos empezar a crear nuestro modulo de backend desde el codigo.
+
+La diferencia entre un modulo de backend y de frontend es que las vistas y la configuraci&oacute;n de frontend las creamos dentro de los directorios **frontend**
+en cambio las vistas y la configuracion del backend (adminhtml) las vamos a crear en los directorios **adminhtml**, pero los controladores y demas componentes los podemos
+colocar en las mismas rutas antes mencionadas cuando generamos el modulo basico de frontend. 
+
+Para lo cual, vamos a hacer lo siguiente:
+
+1. Lo primero que vamos a hacer es crear el directorio **adminhtml** dentro de **etc** para, ah&iacute; dentro, construir nuestro archivo de rutas
+
+    ```shell
+    $ mkdir app/code/Buhoo/ModuloBasico/etc/adminhtml
+    ```
+
+2. Ahora vamos a generar el archivo de rutas de backend, dentro de este directorio
+
+    ```shell
+    $ touch app/code/Buhoo/ModuloBasico/etc/adminhtml/routes.xml
+    ```
+
+3. Ahora colocamos el c&oacute;digo de nuestro archivo de rutas, que es muy similar al de front, pero tiene pequeñas diferencias
+
+    ```xml
+    <?xml version="1.0" ?>
+    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+        <router id="admin">
+            <route id="buhooadmin" frontName="buhooadmin">
+                <module name="Buhoo_ModuloBasico" before="Magento_Backend" />
+            </route>
+        </router>
+    </config>
+    ```
+   
+    > - La primera diferencia es que esta ruta ya no tiene un id->standard sino que es id->admin, ya que es una ruta de backend
+    > - Luego, tenemos que en el tag **module** se agrega el atributo **before** donde le indicamos que esta ruta se hereda de **Magento_Backend**
+
+
+4. Lo siguiente es construir el controlador, para eso, lo primero que hacemos es generar el directorio **Adminhtml** 
+
+    ```shell
+    $ mkdir app/code/Buhoo/ModuloBasico/Controller/Adminhtml
+    ```
+   
+5. Ahora vamos a crear el directorio **Index** y la clase **Index.php** dentro de **Adminhtml**
+
+```shell
+$ mkdir app/code/Buhoo/ModuloBasico/Controller/Adminhtml/Index
+$ touch app/code/Buhoo/ModuloBasico/Controller/Adminhtml/Index/Index.php
+```
+
+6. Ahora vamos a construir la Clase **Index.php** del backend de nuestro m&oacute;dulo b&aacute;sico
+
+    ```php
+    <?php
+    
+    namespace Buhoo\ModuloBasico\Controller\Adminhtml\Index;
+    
+    use Magento\Backend\App\Action\Context;
+    use Magento\Framework\View\Result\PageFactory;
+    
+    use Magento\Backend\App\Action;
+    
+    class Index extends Action
+    {
+        protected PageFactory $resultPageFactory;
+    
+        public function __construct(
+            Context $context,
+            PageFactory $resultPageFactory
+        ){
+            parent::__construct($context);
+            $this->resultPageFactory = $resultPageFactory;
+        }
+    
+        public function execute()
+        {
+            return $this->resultPageFactory->create();
+        }
+    }
+    ```
+
+En este punto ya debemos hacer algo diferente a lo que hicimos en el frontend, ya que ahora estamos en el panel de administraci&oacute;n, y los usuarios para poder
+llegar hasta ac&aacute; ya deben haberse logueado en el sistema, y nosotros debemos validar presisamente eso, que el usuario este autenticado, para esto, procedemos asi.
+
+7. Vamos a crear un archivo de configuraci&oacute;n xml, este archivo nos va a ayudar a colocar un acceso hacia nuestro componente, desde el menu de Magento.
+
+    ```shell
+    $ touch app/code/Buhoo/ModuloBasico/etc/adminhtml/menu.xml
+    ```
+8. Y vamos a realizar la configuración en este archivo de la siguiente manera:
+
+    ```xml
+    <?xml version="1.0"?>
+    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+        <menu>
+            <add
+                id="Buhoo_ModuloBasico::buhoobackend"
+                title="BuhooBackend"
+                module="Buhoo_ModuloBasico"
+                sortOrder="50"
+                parent="Magento_Backend::marketing"
+                resource="Buhoo_ModuloBasico::buhoobackend"
+            />
+            <add
+                id="Buhoo_ModuloBasico::index"
+                title="BuhooBackend Index"
+                module="Buhoo_ModuloBasico"
+                sortOrder="51"
+                parent="Buhoo_ModuloBasico::buhoobackend"
+                action="buhooadmin/index/"
+                resource="Buhoo_ModuloBasico::index"
+            />
+        </menu>
+    </config>
+    ```
+   
+    > Lo que hicimos fue generar un item de menu dentro de la secci&oacute;n de **"Marketing"** de Magento llamada **"BuhooBackend"**, y colocamos un submenu 
+   > debajo de &eacute;sta llamado **"BuhooBackend Index"**, que llevar&aacute; a la ruta **index** de nuestro m&oacute;dulo de backend. 
+
+Una vez terminada la configuraci&oacute;n del men&uacute; ahora vamos a configurar los permisos de nuestro m&oacute;dulo de backend.
+
+## ACL
+
+Vamos ahora a configurar las Listas de Control de Acceso o (ACL) por sus siglas en ingl&eacute;s, de esta manera, podremos otorgar o quitar permisos a usuarios
+para que naveguen en nuestro m&oacute;dulo. Para configurar los ACL vamos a hacer lo siguiente:
+
+1. Dentro del directorio **/app/code/Buhoo/ModuloBasico/etc/** vamos a crear nuestro archivo de configuraci&oacute;n de ACL, y lo vamos a llamar **acl.xml**
+
+    ```shell
+    $ touch app/code/Buhoo/ModuloBasico/etc/acl.xml
+    ```
+    > No importa que este archivo no se encuentre dentro de **adminhtml** ya que los **acl** son archivos que sirven &uacute;nicamente para definir controles de acceso a usuarios en el admin de Magento, por esa razón, creamos este archivo unicamente dentro de **app/code/Buhoo/ModuloBasico/etc**, pero bien pudiera ir dentro de **app/code/Buhoo/ModuloBasico/etc/adminhtml**  
+
+2. Ahora vamos a colocar la siguiente configuraci&oacute;n dentro de &eacute;ste archivo
+
+    ```xml
+    <?xml version="1.0"?>
+    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+        <acl>
+            <resources>
+                <resource id="Magento_Backend::admin">
+                    <resource id="Magento_Backend::marketing">
+                        <resource
+                            id="Buhoo_ModuloBasico::buhoobackend"
+                            title="BuhooBackend" sortOrder="60">
+                            <resource id="Buhoo_ModuloBasico::index" title="BuhooBackend Index" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resources>
+        </acl>
+    </config>
+    ```
+    
+3. Ahora, para conectar todo, vamos a generar un nuevo m&eacute;todo en el controlador, este m&eacute;todo tendr&aacute; el siguiente c&oacute;digo
+
+    * **/app/code/Buhoo/ModuloBasico/Controller/Adminhtml/Index/Index.php**
+    ```php
+    public function _isAllowed()
+    {
+        return $this->_authorization->isAllowed('Buhoo_ModuloBasico::index');
+    }
+    ```
+
+Una vez terminada esta configuraci&oacute;n, vamos a volver a renderizar, a limpiar cach&eacute;, y ya podremos ver el resultado
+
+```shell
+# Eliminamos los directorios /var/cache y /var/view_preprocessed/
+$ rm -Rf var/cache var/view_preprocessed
+
+# Ahora ejecutamos una serie de comandos que referscan y renderizan todo en el proyecto de Magento, para que podamos ver nuestro desarrollo
+$ php bin/magento indexer:reindex && php bin/magento se:up && php bin/magento se:s:d -f && php bin/magento c:f
+```
+Ahora ya podemos ir a verificar el resultado final de estas configuraciones en nuestro Magento
