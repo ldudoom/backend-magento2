@@ -18,5 +18,14 @@
             action="buhooadmin/index/"
             resource="Buhoo_ModuloBasico::index"
         />
+        <add
+            id="Buhoo_ModuloBasico::subscription"
+            title="Subscription"
+            module="Buhoo_ModuloBasico"
+            sortOrder="52"
+            parent="Buhoo_ModuloBasico::buhoobackend"
+            action="buhooadmin/subscription/"
+            resource="Buhoo_ModuloBasico::subscription"
+        />
     </menu>
 </config>

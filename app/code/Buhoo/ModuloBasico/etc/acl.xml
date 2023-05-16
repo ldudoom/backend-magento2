@@ -8,6 +8,7 @@
                         id="Buhoo_ModuloBasico::buhoobackend"
                         title="BuhooBackend" sortOrder="60">
                         <resource id="Buhoo_ModuloBasico::index" title="BuhooBackend Index" />
+                        <resource id="Buhoo_ModuloBasico::subscription" title="ModuloBasico subscription" />
                     </resource>
                 </resource>
             </resource>

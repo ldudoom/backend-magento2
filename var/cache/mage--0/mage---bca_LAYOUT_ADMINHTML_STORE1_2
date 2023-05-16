@@ -1,4 +1,4 @@
-a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1684187755;s:6:"expire";i:1715723755;s:4:"tags";s:37:"bca_LAYOUT_GENERAL_CACHE_TAG,bca_MAGE";}
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1684272175;s:6:"expire";i:1715808175;s:4:"tags";s:37:"bca_LAYOUT_GENERAL_CACHE_TAG,bca_MAGE";}
 <?xml version="1.0"?>
 <layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><handle id="adminhtml_system_config_edit" layout="admin-2columns-left"><body>
    <referenceContainer name="js">
@@ -8106,7 +8106,14 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1684187755;s:6:"expire";i:1715723755;s:4:"t
    </block>
    <block class="Magento\Catalog\Block\Adminhtml\Product\Composite\Configure" template="Magento_Catalog::catalog/product/composite/configure.phtml" name="configure.popup"/>
 </container>
-</layout><handle id="adminhtml_system_config_edit"><head>
+</layout><handle id="buhooadmin_subscription_index"><body>
+   <referenceContainer name="content">
+      <block class="Buhoo\ModuloBasico\Block\Adminhtml\Subscription" name="adminhtml.block.buhooadmin.subscription.container">
+         <block class="Buhoo\ModuloBasico\Block\Adminhtml\Subscription\Grid" name="adminhtml.block.buhooadmin.subscription.grid" as="grid"/>
+      </block>
+   </referenceContainer>
+</body>
+</handle><handle id="adminhtml_system_config_edit"><head>
    <css src="PayPal_Braintree::styles.css"/>
    <script src="PayPal_Braintree::js/system.js"/>
    <script src="PayPal_Braintree::js/paypalStylingPreview.js"/>

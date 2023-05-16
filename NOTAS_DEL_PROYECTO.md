@@ -457,6 +457,7 @@ Ahora ya podemos ir a verificar el resultado final de estas configuraciones en n
 
 
 ## SYSTEM.XML
+***
 
 Básicamente, esto nos sirve para poder crear configuraciones personalizadas en Magento, y que estos parametros de configuraci&oacute;n que generamos, 
 los podamos usar en cualquier parte del desarrollo que estemos haciendo, tanto para m&oacute;dulos de frontend como para m&oacute;dulos de backend.
@@ -507,3 +508,214 @@ Para esto, vamos a construir un archivo llamado **system.xml** donde generaremos
     # Ahora ejecutamos una serie de comandos que referscan y renderizan todo en el proyecto de Magento, para que podamos ver nuestro desarrollo
     $ php bin/magento se:up && php bin/magento indexer:reindex && php bin/magento se:s:d -f && php bin/magento c:f
     ```
+
+
+## GRID
+***
+
+1. Lo primero que vamos a hacer es agregar un recurso más a nuestro ACL para poder configurarlo posteriormente.
+
+   - **/app/code/Buhoo/ModuloBasico/etc/acl.xml**
+    ```xml
+    ...
+    <resource id="Buhoo_ModuloBasico::index" title="BuhooBackend Index" />
+    <resource id="Buhoo_ModuloBasico:subscription" title="ModuloBasico subscription" />
+    ...
+    ```
+
+2. Lo siguiente es agregar un item al menu
+
+   - **/app/code/Buhoo/ModuloBasico/etc/adminhtml/menu.xml**
+    ```xml
+    ...
+    <add
+        id="Buhoo_ModuloBasico::subscription"
+        title="Subscription"
+        module="Buhoo_ModuloBasico"
+        sortOrder="52"
+        parent="Buhoo_ModuloBasico::buhoobackend"
+        action="buhooadmin/subscription/"
+        resource="Buhoo_ModuloBasico::subscription"
+    />
+    ...
+    ```
+
+3. Ahora debemos agregar el controlador
+
+    ```shell
+    $ mkdir app/code/Buhoo/ModuloBasico/Controller/Adminhtml/Subscription
+    $ touch app/code/Buhoo/ModuloBasico/Controller/Adminhtml/Subscription/Index.php
+    ```
+
+4. Ahora colocamos el siguiente codigo dentro de la clase **Index.php**
+
+   - **/app/code/Buhoo/ModuloBasico/Controller/Adminhtml/Subscription/Index.php**
+    ```php
+    <?php
+    
+    namespace Buhoo\ModuloBasico\Controller\Adminhtml\Subscription;
+    
+    use Magento\Backend\App\Action\Context;
+    use Magento\Framework\View\Result\PageFactory;
+    
+    use Magento\Backend\App\Action;
+    
+    class Index extends Action
+    {
+        protected PageFactory $resultPageFactory;
+    
+        public function __construct(Context $context, PageFactory $resultPageFactory)
+        {
+            parent::__construct($context);
+            $this->resultPageFactory = $resultPageFactory;
+        }
+    
+        public function execute()
+        {
+            $resultPage = $this->resultPageFactory->create();
+            $resultPage->setActiveMenu('Marcgento_ModuloBasico::subscription');
+            $resultPage->addBreadcrumb(__('Grid Subscription'), __('Grid Subscription'));
+            $resultPage->addBreadcrumb(__('Manage Subscription'), __('Manage Subscription'));
+            $resultPage->getConfig()->getTitle()->prepend(__('Subscriptions'));
+            return $resultPage;
+    
+        }
+    
+        public function _isAllowed()
+        {
+            return $this->_authorization->isAllowed('Buhoo_ModuloBasico:subscription');
+        }
+    }
+    
+    ```
+
+5. Lo siguiente que vamos a hacer es generar nuestra clase de bloque, para eso, vamos a generar la siguiente estructura de directorios
+
+    ```
+    ├── app 
+        ├── code
+            ├── Buhoo
+                ├── ModuloBasico
+                    ├── Block
+                        ├── Adminhtml
+                        |    ├── Subscription
+                        |    |   ├── Grid.php
+                        |    └── Subscription.php
+                        └── Buhoo.php
+    ```
+
+    ```shell
+    $ mkdir app/code/Buhoo/ModuloBasico/Block/Adminhtml
+    $ mkdir app/code/Buhoo/ModuloBasico/Block/Adminhtml/Subscription
+    $ touch app/code/Buhoo/ModuloBasico/Block/Adminhtml/Subscription.php
+    $ touch app/code/Buhoo/ModuloBasico/Block/Adminhtml/Subscription/Grid.php
+    ```
+
+6. Vamos ahora a configurar la clase **Subscription.php**
+
+   - **app/code/Buhoo/ModuloBasico/Block/Adminhtml/Subscription.php**
+    ```php
+    <?php
+    
+    namespace Buhoo\ModuloBasico\Block\Adminhtml;
+    
+    class Subscription extends \Magento\Backend\Block\Widget\Grid\Container
+    {
+        protected function _construct()
+        {
+            $this->_blockGroup = 'Buhoo_ModuloBasico';
+            $this->_controller = 'adminhtml_subscription';
+            parent::_construct();
+        }
+    }
+    ```
+   
+7. Vamos a configurar ahora la clase personalizada **Grid.php**
+
+   - **app/code/Buhoo/ModuloBasico/Block/Adminhtml/Subscription/Grid.php**
+    ```php
+    <?php
+    
+    namespace Buhoo\ModuloBasico\Block\Adminhtml\Subscription;
+    
+    use Magento\Backend\Block\Widget\Grid as WidgetGrid;
+    
+    
+    class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
+    {
+        /**
+         * @var \Buhoo\ModuloBasico\Model\Resource\Subscription\Collection
+         */
+        protected $_subscriptionCollection;
+    
+        /**
+         * @param \Magento\Backend\Block\Template\Context $context
+         * @param \Magento\Backend\Helper\Data $backendHelper
+         * @param \Buhoo\ModuloBasico\Model\ResourceModel\Subscription\Collection $subscriptionCollection
+         * @param array $data
+         */
+        public function __construct(
+            \Magento\Backend\Block\Template\Context $context,
+            \Magento\Backend\Helper\Data $backendHelper,
+            \Buhoo\ModuloBasico\Model\ResourceModel\Subscription\Collection $subscriptionCollection,
+            array $data = []
+        ){
+            $this->_subscriptionCollection = $subscriptionCollection;
+            parent::__construct($context, $backendHelper, $data);
+            $this->setEmptyText(__('No Subscription Found'));
+        }
+    
+        /**
+         * Initialize the subscription collection
+         *
+         * @return WidgetGrid
+         */
+        protected function _prepareCollection()
+        {
+            $this->setCollection($this->_subscriptionCollection);
+            return parent::_prepareCollection();
+        }
+    }
+    ```
+
+8. Vamos a agregar los directorios para generar nuestras vistas:
+
+    ```shell
+    $ mkdir app/code/Buhoo/ModuloBasico/view/adminhtml
+    $ mkdir app/code/Buhoo/ModuloBasico/view/adminhtml/layout
+    ```
+
+9. Vamos ahora a crear el layout cuyo nombre debe tener:
+ 
+    - El valor del **frontname** de la ruta, en nuestro caso es: **"buhooadmin"**
+    - Luego, el nombre del directorio donde esta el controlador, es decir: **"Subscription"**
+    - Y por ultimo la accion, en nuestro caso es: **"Index"**
+
+    ```shell
+    $ touch app/code/Buhoo/ModuloBasico/view/adminhtml/layout/buhooadmin_subscription_index.xml
+    ```
+
+10. Ahora vamos a realizar la configuracion de nuestro layout
+
+    ```xml
+    <?xml version="1.0"?>
+    <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+        <body>
+            <referenceContainer name="content">
+                <block class="Buhoo\ModuloBasico\Block\Adminhtml\Subscription" name="adminhtml.block.buhooadmin.subscription.container">
+                    <block class="Buhoo\ModuloBasico\Block\Adminhtml\Subscription\Grid" name="adminhtml.block.buhooadmin.subscription.grid" as="grid" />
+                </block>
+            </referenceContainer>
+        </body>
+    </page>
+    ```
+
+11. Ahora vamos a ejecutar los comandos necesarios para limpiar la cache y demas comandos para poder visualizar las configuraciones que hicimos en nuestro Magento
+
+```shell
+# Eliminamos los directorios /var/cache y /var/view_preprocessed/
+$ rm -Rf var/cache var/view_preprocessed
+
+# Ahora ejecutamos una serie de comandos que referscan y renderizan todo en el proyecto de Magento, para que podamos ver nuestro desarrollo
+$ php bin/magento se:up && php bin/magento indexer:reindex && php bin/magento se:s:d -f && php bin/magento c:f
+```
