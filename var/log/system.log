@@ -4606,3 +4606,258 @@ Did you mean this?
 #3 C:\xampp\htdocs\magento246\vendor\symfony\console\Application.php(171): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #4 C:\xampp\htdocs\magento246\bin\magento(23): Symfony\Component\Console\Application->run()
 #5 {main} [] []
+[2023-05-18T21:34:18.027307+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2023-05-18T21:34:18.061511+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2023-05-18T21:34:18.085332+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.284885+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.320625+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.352351+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.384301+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.416982+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.448854+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.481219+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.513688+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.551948+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.591789+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.630651+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.665563+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.698766+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.730844+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.764859+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.801219+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.843157+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.873251+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2023-05-18T21:34:20.907896+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2023-05-18T21:34:20.941093+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2023-05-18T21:34:20.980042+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2023-05-18T21:34:21.019480+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2023-05-18T21:34:21.054288+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2023-05-18T21:34:21.087062+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2023-05-18T21:34:21.117679+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2023-05-18T21:34:21.148788+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2023-05-18T21:34:38.053080+00:00] main.INFO: Broken reference: the 'catalog.compare.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2023-05-18T21:34:38.075330+00:00] main.INFO: Broken reference: the 'sale.reorder.sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2023-05-18T21:34:38.102291+00:00] main.INFO: Broken reference: the 'wishlist_sidebar' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2023-05-18T21:34:38.137809+00:00] main.INFO: Broken reference: the 'paypal.partner.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2023-05-18T21:34:38.158581+00:00] main.INFO: Broken reference: the 'bml.right.logo' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2023-05-18T21:34:38.176372+00:00] main.INFO: Broken reference: the 'sidebar.container.paylater' element cannot be added as child to 'sidebar.additional', because the latter doesn't exist [] []
+[2023-05-18T22:22:24.678974+00:00] main.WARNING: Memory size allocated for the temporary table is more than 20% of innodb_buffer_pool_size. Please update innodb_buffer_pool_size or decrease batch size value (which decreases memory usages for the temporary table). Current batch size: 100000; Allocated memory size: 50000000 bytes; InnoDB buffer pool size: 134217728 bytes. [] []
+[2023-05-18T22:22:24.807561+00:00] main.WARNING: Memory size allocated for the temporary table is more than 20% of innodb_buffer_pool_size. Please update innodb_buffer_pool_size or decrease batch size value (which decreases memory usages for the temporary table). Current batch size: 100000; Allocated memory size: 50000000 bytes; InnoDB buffer pool size: 134217728 bytes. [] []
+[2023-05-18T22:22:24.912788+00:00] main.WARNING: Memory size allocated for the temporary table is more than 20% of innodb_buffer_pool_size. Please update innodb_buffer_pool_size or decrease batch size value (which decreases memory usages for the temporary table). Current batch size: 100000; Allocated memory size: 50000000 bytes; InnoDB buffer pool size: 134217728 bytes. [] []
+[2023-05-18T22:22:25.197355+00:00] main.WARNING: Memory size allocated for the temporary table is more than 20% of innodb_buffer_pool_size. Please update innodb_buffer_pool_size or decrease batch size value (which decreases memory usages for the temporary table). Current batch size: 100000; Allocated memory size: 50000000 bytes; InnoDB buffer pool size: 134217728 bytes. [] []
+[2023-05-18T22:22:25.302503+00:00] main.WARNING: Memory size allocated for the temporary table is more than 20% of innodb_buffer_pool_size. Please update innodb_buffer_pool_size or decrease batch size value (which decreases memory usages for the temporary table). Current batch size: 100000; Allocated memory size: 50000000 bytes; InnoDB buffer pool size: 134217728 bytes. [] []
+[2023-05-18T22:22:25.435594+00:00] main.WARNING: Memory size allocated for the temporary table is more than 20% of innodb_buffer_pool_size. Please update innodb_buffer_pool_size or decrease batch size value (which decreases memory usages for the temporary table). Current batch size: 100000; Allocated memory size: 50000000 bytes; InnoDB buffer pool size: 134217728 bytes. [] []
+[2023-05-18T22:22:37.160792+00:00] main.WARNING: Memory size allocated for the temporary table is more than 20% of innodb_buffer_pool_size. Please update innodb_buffer_pool_size or decrease batch size value (which decreases memory usages for the temporary table). Current batch size: 3334; Allocated memory size: 40008000 bytes; InnoDB buffer pool size: 134217728 bytes. [] []
+[2023-05-18T22:22:59.467273+00:00] main.WARNING: Memory size allocated for the temporary table is more than 20% of innodb_buffer_pool_size. Please update innodb_buffer_pool_size or decrease batch size value (which decreases memory usages for the temporary table). Current batch size: 100000; Allocated memory size: 50000000 bytes; InnoDB buffer pool size: 134217728 bytes. [] []
+[2023-05-18T22:22:59.574206+00:00] main.WARNING: Memory size allocated for the temporary table is more than 20% of innodb_buffer_pool_size. Please update innodb_buffer_pool_size or decrease batch size value (which decreases memory usages for the temporary table). Current batch size: 100000; Allocated memory size: 50000000 bytes; InnoDB buffer pool size: 134217728 bytes. [] []
+[2023-05-18T22:22:59.663556+00:00] main.WARNING: Memory size allocated for the temporary table is more than 20% of innodb_buffer_pool_size. Please update innodb_buffer_pool_size or decrease batch size value (which decreases memory usages for the temporary table). Current batch size: 100000; Allocated memory size: 50000000 bytes; InnoDB buffer pool size: 134217728 bytes. [] []
+[2023-05-18T22:23:08.578836+00:00] main.WARNING: Memory size allocated for the temporary table is more than 20% of innodb_buffer_pool_size. Please update innodb_buffer_pool_size or decrease batch size value (which decreases memory usages for the temporary table). Current batch size: 3334; Allocated memory size: 40008000 bytes; InnoDB buffer pool size: 134217728 bytes. [] []
+[2023-05-18T22:23:13.571298+00:00] main.ERROR: Command "se:c:d" is not defined.
+
+Did you mean one of these?
+    admin:adobe-ims:disable
+    app:config:dump
+    app:config:import
+    app:config:status
+    cache:clean
+    catalog:product:attributes:cleanup
+    customer:hash:upgrade
+    dev:email:override-compatibility-check
+    dev:profiler:disable
+    dev:query-log:disable
+    dev:source-theme:deploy
+    dev:template-hints:disable
+    dev:urn-catalog:generate
+    downloadable:domains:add
+    encryption:payment-data:update
+    i18n:collect-phrases
+    i18n:pack
+    info:backups:list
+    info:currency:list
+    info:dependencies:show-framework
+    info:dependencies:show-modules
+    info:dependencies:show-modules-circular
+    media-content:sync
+    media-gallery:sync
+    module:config:status
+    newrelic:create:deploy-marker
+    queue:consumers:list
+    queue:consumers:restart
+    queue:consumers:start
+    remote-storage:sync
+    security:recaptcha:disable-for-user-forgot-password
+    security:recaptcha:disable-for-user-login
+    setup:backup
+    setup:config:set
+    setup:db-data:upgrade
+    setup:db-declaration:generate-patch
+    setup:db-declaration:generate-whitelist
+    setup:db-schema:upgrade
+    setup:performance:generate-fixtures
+    setup:rollback
+    setup:static-content:deploy
+    setup:store-config:set
+    varnish:vcl:generate
+#0 C:\xampp\htdocs\magento246\vendor\symfony\console\Application.php(259): Symfony\Component\Console\Application->find('se:c:d')
+#1 C:\xampp\htdocs\magento246\vendor\magento\framework\Console\Cli.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 C:\xampp\htdocs\magento246\vendor\symfony\console\Application.php(171): Magento\Framework\Console\Cli->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 C:\xampp\htdocs\magento246\bin\magento(23): Symfony\Component\Console\Application->run()
+#4 {main} [] []
+[2023-05-18T22:26:31.838778+00:00] main.INFO: Broken reference: the 'tracking' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.845874+00:00] main.INFO: Broken reference: the 'notification_area' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.852991+00:00] main.INFO: Broken reference: the 'unread_system_messages' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.859310+00:00] main.INFO: Broken reference: the 'notification_window' element cannot be added as child to 'notifications', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.865061+00:00] main.INFO: Broken reference: the 'notification.messages' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.872397+00:00] main.INFO: Broken reference: the 'global_notices' element cannot be added as child to 'global.notices', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.877900+00:00] main.INFO: Broken reference: the 'logo' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.884100+00:00] main.INFO: Broken reference: the 'global.search' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.889807+00:00] main.INFO: Broken reference: the 'user' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.895003+00:00] main.INFO: Broken reference: the 'menu' element cannot be added as child to 'page.menu', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.900656+00:00] main.INFO: Broken reference: the 'breadcrumbs' element cannot be added as child to 'page.breadcrumbs', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.907296+00:00] main.INFO: Broken reference: the 'formkey' element cannot be added as child to 'page.formkey', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.912676+00:00] main.INFO: Broken reference: the 'page.title' element cannot be added as child to 'main.top', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.919991+00:00] main.INFO: Broken reference: the 'messages' element cannot be added as child to 'page.messages', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.939155+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' element cannot be added as child to 'page.main.actions', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.945766+00:00] main.INFO: Broken reference: the 'legal' element cannot be added as child to 'footer', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.956223+00:00] main.INFO: Broken reference: the 'header.inner.left' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.964107+00:00] main.INFO: Broken reference: the 'header.inner.right' element cannot be added as child to 'header', because the latter doesn't exist [] []
+[2023-05-18T22:26:31.971760+00:00] main.INFO: Broken reference: the 'user' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2023-05-18T22:26:31.977419+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header' and '' respectively. [] []
+[2023-05-18T22:26:31.984990+00:00] main.INFO: Broken reference: the 'logo' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2023-05-18T22:26:31.991075+00:00] main.INFO: Broken reference: the 'global.search' tries to reorder itself towards 'logo', but their parents are different: 'header' and '' respectively. [] []
+[2023-05-18T22:26:31.996588+00:00] main.INFO: Broken reference: the 'page.actions.toolbar' tries to reorder itself towards '', but their parents are different: 'page.main.actions' and '' respectively. [] []
+[2023-05-18T22:26:32.004791+00:00] main.INFO: Broken reference: the 'header.inner.left' tries to reorder itself towards '', but their parents are different: 'header' and '' respectively. [] []
+[2023-05-18T22:26:32.012969+00:00] main.INFO: Broken reference: the 'header.inner.right' tries to reorder itself towards 'header.inner.left', but their parents are different: 'header' and '' respectively. [] []
+[2023-05-18T22:26:32.019919+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and '' respectively. [] []
+[2023-05-18T22:27:32.856888+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2023-05-18T22:27:33.561289+00:00] main.INFO: Item Magento_Backend::system_currency was removed [] []
+[2023-05-18T22:27:33.669978+00:00] main.INFO: Add of item with id Magento_Config::system_config was processed [] []
+[2023-05-18T22:27:33.676176+00:00] main.INFO: Add of item with id Magento_AdminNotification::system_adminnotification was processed [] []
+[2023-05-18T22:27:33.682391+00:00] main.INFO: Add of item with id Magento_Theme::design_config was processed [] []
+[2023-05-18T22:27:33.688816+00:00] main.INFO: Add of item with id Magento_Theme::system_design_theme was processed [] []
+[2023-05-18T22:27:33.694022+00:00] main.INFO: Add of item with id Magento_Backend::system_design_schedule was processed [] []
+[2023-05-18T22:27:33.699191+00:00] main.INFO: Add of item with id Magento_Backend::system_store was processed [] []
+[2023-05-18T22:27:33.707686+00:00] main.INFO: Add of item with id Magento_Backend::dashboard was processed [] []
+[2023-05-18T22:27:33.713909+00:00] main.INFO: Add of item with id Magento_Backend::system was processed [] []
+[2023-05-18T22:27:33.721573+00:00] main.INFO: Add of item with id Magento_Backend::system_tools was processed [] []
+[2023-05-18T22:27:33.727409+00:00] main.INFO: Add of item with id Magento_Backend::system_design was processed [] []
+[2023-05-18T22:27:33.732950+00:00] main.INFO: Add of item with id Magento_Backend::system_convert was processed [] []
+[2023-05-18T22:27:33.739570+00:00] main.INFO: Add of item with id Magento_Backend::system_cache was processed [] []
+[2023-05-18T22:27:33.744562+00:00] main.INFO: Add of item with id Magento_Backend::marketing was processed [] []
+[2023-05-18T22:27:33.750800+00:00] main.INFO: Add of item with id Magento_Backend::marketing_communications was processed [] []
+[2023-05-18T22:27:33.756223+00:00] main.INFO: Add of item with id Magento_Backend::marketing_seo was processed [] []
+[2023-05-18T22:27:33.761324+00:00] main.INFO: Add of item with id Magento_Backend::marketing_user_content was processed [] []
+[2023-05-18T22:27:33.768448+00:00] main.INFO: Add of item with id Magento_Backend::content was processed [] []
+[2023-05-18T22:27:33.774048+00:00] main.INFO: Add of item with id Magento_Backend::content_elements was processed [] []
+[2023-05-18T22:27:33.779410+00:00] main.INFO: Add of item with id Magento_Backend::stores was processed [] []
+[2023-05-18T22:27:33.787435+00:00] main.INFO: Add of item with id Magento_Backend::stores_settings was processed [] []
+[2023-05-18T22:27:33.792990+00:00] main.INFO: Add of item with id Magento_Backend::stores_attributes was processed [] []
+[2023-05-18T22:27:33.799204+00:00] main.INFO: Add of item with id Magento_Backend::other_settings was processed [] []
+[2023-05-18T22:27:33.804706+00:00] main.INFO: Add of item with id Magento_Backend::system_other_settings was processed [] []
+[2023-05-18T22:27:33.810180+00:00] main.INFO: Add of item with id Magento_User::system_acl was processed [] []
+[2023-05-18T22:27:33.816586+00:00] main.INFO: Add of item with id Magento_User::system_acl_users was processed [] []
+[2023-05-18T22:27:33.822460+00:00] main.INFO: Add of item with id Magento_User::system_acl_roles was processed [] []
+[2023-05-18T22:27:33.827242+00:00] main.INFO: Add of item with id Magento_User::system_acl_locks was processed [] []
+[2023-05-18T22:27:33.834731+00:00] main.INFO: Add of item with id Magento_Customer::customer was processed [] []
+[2023-05-18T22:27:33.842367+00:00] main.INFO: Add of item with id Magento_Customer::customer_manage was processed [] []
+[2023-05-18T22:27:33.850983+00:00] main.INFO: Add of item with id Magento_Customer::customer_online was processed [] []
+[2023-05-18T22:27:33.859518+00:00] main.INFO: Add of item with id Magento_Customer::customer_group was processed [] []
+[2023-05-18T22:27:33.866699+00:00] main.INFO: Add of item with id Magento_Backup::system_tools_backup was processed [] []
+[2023-05-18T22:27:33.873048+00:00] main.INFO: Add of item with id Magento_Indexer::system_index was processed [] []
+[2023-05-18T22:27:33.879073+00:00] main.INFO: Add of item with id Magento_Variable::system_variable was processed [] []
+[2023-05-18T22:27:33.884995+00:00] main.INFO: Add of item with id Magento_Cms::cms_page was processed [] []
+[2023-05-18T22:27:33.890861+00:00] main.INFO: Add of item with id Magento_Cms::cms_block was processed [] []
+[2023-05-18T22:27:33.896903+00:00] main.INFO: Add of item with id Magento_Catalog::catalog was processed [] []
+[2023-05-18T22:27:33.903968+00:00] main.INFO: Add of item with id Magento_Catalog::catalog_products was processed [] []
+[2023-05-18T22:27:33.910287+00:00] main.INFO: Add of item with id Magento_Catalog::catalog_categories was processed [] []
+[2023-05-18T22:27:33.936477+00:00] main.INFO: Add of item with id Magento_Catalog::catalog_attributes_attributes was processed [] []
+[2023-05-18T22:27:33.953438+00:00] main.INFO: Add of item with id Magento_Catalog::catalog_attributes_sets was processed [] []
+[2023-05-18T22:27:33.970369+00:00] main.INFO: Add of item with id Magento_Catalog::inventory was processed [] []
+[2023-05-18T22:27:33.985749+00:00] main.INFO: Add of item with id Magento_Search::search_terms was processed [] []
+[2023-05-18T22:27:33.998991+00:00] main.INFO: Add of item with id Magento_Search::search_synonyms was processed [] []
+[2023-05-18T22:27:34.006355+00:00] main.INFO: Add of item with id Magento_CatalogRule::promo was processed [] []
+[2023-05-18T22:27:34.012211+00:00] main.INFO: Add of item with id Magento_CatalogRule::promo_catalog was processed [] []
+[2023-05-18T22:27:34.019223+00:00] main.INFO: Add of item with id Magento_Sales::sales was processed [] []
+[2023-05-18T22:27:34.027294+00:00] main.INFO: Add of item with id Magento_Sales::sales_operation was processed [] []
+[2023-05-18T22:27:34.033662+00:00] main.INFO: Add of item with id Magento_Sales::sales_order was processed [] []
+[2023-05-18T22:27:34.039913+00:00] main.INFO: Add of item with id Magento_Sales::sales_invoice was processed [] []
+[2023-05-18T22:27:34.045360+00:00] main.INFO: Add of item with id Magento_Sales::sales_shipment was processed [] []
+[2023-05-18T22:27:34.051290+00:00] main.INFO: Add of item with id Magento_Sales::sales_creditmemo was processed [] []
+[2023-05-18T22:27:34.056745+00:00] main.INFO: Add of item with id Magento_Sales::sales_transactions was processed [] []
+[2023-05-18T22:27:34.061658+00:00] main.INFO: Add of item with id Magento_Sales::system_order_statuses was processed [] []
+[2023-05-18T22:27:34.067762+00:00] main.INFO: Add of item with id Magento_MediaGalleryUi::media was processed [] []
+[2023-05-18T22:27:34.074398+00:00] main.INFO: Add of item with id Magento_MediaGalleryUi::media_gallery was processed [] []
+[2023-05-18T22:27:34.080686+00:00] main.INFO: Add of item with id Magento_Downloadable::report_products_downloads was processed [] []
+[2023-05-18T22:27:34.087797+00:00] main.INFO: Add of item with id Magento_Integration::system_extensions was processed [] []
+[2023-05-18T22:27:34.093492+00:00] main.INFO: Add of item with id Magento_Integration::system_integrations was processed [] []
+[2023-05-18T22:27:34.099273+00:00] main.INFO: Add of item with id Magento_UrlRewrite::urlrewrite was processed [] []
+[2023-05-18T22:27:34.104445+00:00] main.INFO: Add of item with id Magento_Tax::sales_tax was processed [] []
+[2023-05-18T22:27:34.110459+00:00] main.INFO: Add of item with id Magento_Tax::sales_tax_rules was processed [] []
+[2023-05-18T22:27:34.115900+00:00] main.INFO: Add of item with id Magento_Tax::sales_tax_rates was processed [] []
+[2023-05-18T22:27:34.121175+00:00] main.INFO: Add of item with id Magento_Widget::cms_widget_instance was processed [] []
+[2023-05-18T22:27:34.127248+00:00] main.INFO: Add of item with id Magento_Analytics::business_intelligence was processed [] []
+[2023-05-18T22:27:34.136164+00:00] main.INFO: Add of item with id Magento_Analytics::advanced_reporting was processed [] []
+[2023-05-18T22:27:34.141746+00:00] main.INFO: Add of item with id Magento_Analytics::bi_essentials was processed [] []
+[2023-05-18T22:27:34.147691+00:00] main.INFO: Add of item with id Magento_ImportExport::system_convert_import was processed [] []
+[2023-05-18T22:27:34.154485+00:00] main.INFO: Add of item with id Magento_ImportExport::system_convert_export was processed [] []
+[2023-05-18T22:27:34.159895+00:00] main.INFO: Add of item with id Magento_ImportExport::system_convert_history was processed [] []
+[2023-05-18T22:27:34.166313+00:00] main.INFO: Add of item with id Magento_Email::template was processed [] []
+[2023-05-18T22:27:34.171845+00:00] main.INFO: Add of item with id Magento_EncryptionKey::system_crypt_key was processed [] []
+[2023-05-18T22:27:34.177422+00:00] main.INFO: Add of item with id Magento_InventoryAdminUi::inventory was processed [] []
+[2023-05-18T22:27:34.183788+00:00] main.INFO: Add of item with id Magento_InventoryAdminUi::source was processed [] []
+[2023-05-18T22:27:34.189393+00:00] main.INFO: Add of item with id Magento_InventoryAdminUi::stock was processed [] []
+[2023-05-18T22:27:34.195228+00:00] main.INFO: Add of item with id Magento_Reports::report was processed [] []
+[2023-05-18T22:27:34.201824+00:00] main.INFO: Add of item with id Magento_Reports::report_marketing was processed [] []
+[2023-05-18T22:27:34.207207+00:00] main.INFO: Add of item with id Magento_Reports::report_salesroot was processed [] []
+[2023-05-18T22:27:34.213130+00:00] main.INFO: Add of item with id Magento_Reports::report_salesroot_sales was processed [] []
+[2023-05-18T22:27:34.220100+00:00] main.INFO: Add of item with id Magento_Reports::report_salesroot_tax was processed [] []
+[2023-05-18T22:27:34.225698+00:00] main.INFO: Add of item with id Magento_Reports::report_salesroot_invoiced was processed [] []
+[2023-05-18T22:27:34.230511+00:00] main.INFO: Add of item with id Magento_Reports::report_salesroot_shipping was processed [] []
+[2023-05-18T22:27:34.236051+00:00] main.INFO: Add of item with id Magento_Reports::report_salesroot_refunded was processed [] []
+[2023-05-18T22:27:34.241457+00:00] main.INFO: Add of item with id Magento_Reports::report_salesroot_coupons was processed [] []
+[2023-05-18T22:27:34.247613+00:00] main.INFO: Add of item with id Magento_Reports::report_shopcart_product was processed [] []
+[2023-05-18T22:27:34.253468+00:00] main.INFO: Add of item with id Magento_Reports::report_shopcart_abandoned was processed [] []
+[2023-05-18T22:27:34.271759+00:00] main.INFO: Add of item with id Magento_Reports::report_products was processed [] []
+[2023-05-18T22:27:34.278466+00:00] main.INFO: Add of item with id Magento_Reports::report_products_bestsellers was processed [] []
+[2023-05-18T22:27:34.285036+00:00] main.INFO: Add of item with id Magento_Reports::report_products_sold was processed [] []
+[2023-05-18T22:27:34.291638+00:00] main.INFO: Add of item with id Magento_Reports::report_products_viewed was processed [] []
+[2023-05-18T22:27:34.297175+00:00] main.INFO: Add of item with id Magento_Reports::report_products_lowstock was processed [] []
+[2023-05-18T22:27:34.302877+00:00] main.INFO: Add of item with id Magento_Reports::report_customers was processed [] []
+[2023-05-18T22:27:34.308639+00:00] main.INFO: Add of item with id Magento_Reports::report_customers_accounts was processed [] []
+[2023-05-18T22:27:34.314323+00:00] main.INFO: Add of item with id Magento_Reports::report_customers_totals was processed [] []
+[2023-05-18T22:27:34.320484+00:00] main.INFO: Add of item with id Magento_Reports::report_customers_orders was processed [] []
+[2023-05-18T22:27:34.325663+00:00] main.INFO: Add of item with id Magento_Reports::report_statistics was processed [] []
+[2023-05-18T22:27:34.331316+00:00] main.INFO: Add of item with id Magento_Reports::report_statistics_refresh was processed [] []
+[2023-05-18T22:27:34.339437+00:00] main.INFO: Add of item with id Magento_Search::report_search_term was processed [] []
+[2023-05-18T22:27:34.345974+00:00] main.INFO: Add of item with id Magento_LoginAsCustomerLog::login_log was processed [] []
+[2023-05-18T22:27:34.353051+00:00] main.INFO: Add of item with id Magento_Marketplace::partners was processed [] []
+[2023-05-18T22:27:34.358820+00:00] main.INFO: Add of item with id Magento_Newsletter::newsletter_template was processed [] []
+[2023-05-18T22:27:34.364255+00:00] main.INFO: Add of item with id Magento_Newsletter::newsletter_queue was processed [] []
+[2023-05-18T22:27:34.369827+00:00] main.INFO: Add of item with id Magento_Newsletter::newsletter_subscriber was processed [] []
+[2023-05-18T22:27:34.375474+00:00] main.INFO: Add of item with id Magento_Newsletter::newsletter_problem was processed [] []
+[2023-05-18T22:27:34.380926+00:00] main.INFO: Add of item with id Magento_SalesRule::promo_quote was processed [] []
+[2023-05-18T22:27:34.386894+00:00] main.INFO: Add of item with id Magento_Sitemap::catalog_sitemap was processed [] []
+[2023-05-18T22:27:34.392279+00:00] main.INFO: Add of item with id Magento_PageBuilder::templates was processed [] []
+[2023-05-18T22:27:34.397164+00:00] main.INFO: Add of item with id Magento_Paypal::report_salesroot_paypal_settlement_reports was processed [] []
+[2023-05-18T22:27:34.404263+00:00] main.INFO: Add of item with id Magento_Paypal::paypal_billing_agreement was processed [] []
+[2023-05-18T22:27:34.409296+00:00] main.INFO: Add of item with id Magento_Review::catalog_reviews_ratings_ratings was processed [] []
+[2023-05-18T22:27:34.415273+00:00] main.INFO: Add of item with id Magento_Review::catalog_reviews_ratings_pending was processed [] []
+[2023-05-18T22:27:34.421969+00:00] main.INFO: Add of item with id Magento_Review::catalog_reviews_ratings_reviews_all was processed [] []
+[2023-05-18T22:27:34.427120+00:00] main.INFO: Add of item with id Magento_Review::report_review was processed [] []
+[2023-05-18T22:27:34.434323+00:00] main.INFO: Add of item with id Magento_Review::report_review_customer was processed [] []
+[2023-05-18T22:27:34.439666+00:00] main.INFO: Add of item with id Magento_Review::report_review_product was processed [] []
+[2023-05-18T22:27:34.445424+00:00] main.INFO: Add of item with id Magento_CheckoutAgreements::sales_checkoutagreement was processed [] []
+[2023-05-18T22:27:34.451732+00:00] main.INFO: Add of item with id Magento_TaxImportExport::system_convert_tax was processed [] []
+[2023-05-18T22:27:34.457999+00:00] main.INFO: Add of item with id Magento_AsynchronousOperations::system_magento_logging was processed [] []
+[2023-05-18T22:27:34.464853+00:00] main.INFO: Add of item with id Magento_AsynchronousOperations::system_magento_logging_bulk_operations was processed [] []
+[2023-05-18T22:27:34.471959+00:00] main.INFO: Add of item with id Magento_CurrencySymbol::system_currency was processed [] []
+[2023-05-18T22:27:34.480110+00:00] main.INFO: Add of item with id Magento_CurrencySymbol::system_currency_rates was processed [] []
+[2023-05-18T22:27:34.488517+00:00] main.INFO: Add of item with id Magento_CurrencySymbol::system_currency_symbols was processed [] []
+[2023-05-18T22:27:34.497162+00:00] main.INFO: Add of item with id Buhoo_ModuloBasico::buhoobackend was processed [] []
+[2023-05-18T22:27:34.503936+00:00] main.INFO: Add of item with id Buhoo_ModuloBasico::index was processed [] []
+[2023-05-18T22:27:34.510556+00:00] main.INFO: Add of item with id Buhoo_ModuloBasico::subscription was processed [] []
+[2023-05-18T22:27:34.517380+00:00] main.INFO: Add of item with id PayPal_Braintree::settlement_report was processed [] []
+[2023-05-18T22:27:34.523871+00:00] main.INFO: Add of item with id PayPal_Braintree::virtual_terminal was processed [] []
+[2023-05-18T22:33:41.531094+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2023-05-18T22:34:08.930432+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
+[2023-05-18T22:34:49.812301+00:00] main.INFO: Broken reference: the 'notification.messages' tries to reorder itself towards 'user', but their parents are different: 'header.inner.right' and 'header' respectively. [] []
