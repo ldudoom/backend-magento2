@@ -719,3 +719,270 @@ $ rm -Rf var/cache var/view_preprocessed
 # Ahora ejecutamos una serie de comandos que referscan y renderizan todo en el proyecto de Magento, para que podamos ver nuestro desarrollo
 $ php bin/magento se:up && php bin/magento indexer:reindex && php bin/magento se:s:d -f && php bin/magento c:f
 ```
+
+
+## Desarrollando el Backend Model
+***
+
+Ahora vamos a generar la configuraci&oacute;n y las clases necesarias para generar una nueva tabla que se llame buhoo_subscription que tendra varios campos y la vamos a leer, 
+obtener sus datos y mostrarlos en el grid que construimos anteriormente.
+
+Para esto, debemos crear 4 clases
+
+1. Primero debemos crear la clase de la instacion del Schema que es el que se va a encargar de generar la tabla personalizada, sin datos, unicamente la tabla
+2. Una clase de modelo
+3. Una clase de recurso de modelo
+4. Y una clase de colecciones
+
+> Las 3 &uacute;ltimas tablas son con las cuales generaremos el ***CRUD*** de la tabla personalizada que vamos a crear
+
+Vamos entonces a crear la tabla personalizada.
+
+1. Dentro de nuestro directorio de modulo **/app/code/buhoo/ModuloBasico** vamos a crear el directorio **Setup**
+
+    ```shell
+    $ mkdir app/code/buhoo/ModuloBasico/Setup
+    ```
+
+2. Ahora vamos a crear la clase **UpgradeSchema.php** dentro del directorio **Setup** que acabamos de crear
+
+```shell
+$ touch app/code/buhoo/ModuloBasico/Setup/UpgradeSchema.php
+```
+
+3. En este archivo vamos a colocar el codigo necesario para generar la tabla personalizada que vamos a crear.
+
+    ```php
+    <?php
+    
+    namespace Buhoo\ModuloBasico\Setup;
+    
+    use Magento\Framework\Setup\UpgradeSchemaInterface;
+    use Magento\Framework\Setup\ModuleContextInterface;
+    use Magento\Framework\Setup\SchemaSetupInterface;
+    
+    class UpgradeSchema implements UpgradeSchemaInterface
+    {
+    
+        public function upgrade(SchemaSetupInterface $setup, ModuleContextInterface $context)
+        {
+            if(version_compare($context->getVersion(), '1.0.0') < 0){
+                $installer = $setup;
+    
+                $installer->startSetup();
+                $connection = $installer->getConnection();
+    
+                // Installing new table
+                $table = $installer->getConnection()->newTable(
+                    $installer->getTable('buhoo_subscription')
+                )->addColumn(
+                    'subscription_id',
+                    \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+                    null,
+                    [
+                        'identity' => true,
+                        'unsigned' => true,
+                        'nullable' => false,
+                        'primary' => true
+                    ],
+                    'Subscription Id'
+                )->addColumn(
+                    'created_at',
+                    \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
+                    null,
+                    [
+                        'nullable' => false,
+                        'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT
+                    ],
+                    'Created At'
+                )->addColumn(
+                    'updated_at',
+                    \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
+                    null,
+                    [],
+                    'Updated At'
+                )->addColumn(
+                    'firstname',
+                    \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                    64,
+                    [
+                        'nullable' => false
+                    ],
+                    'First Name'
+                )->addColumn(
+                    'lastname',
+                    \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                    64,
+                    [
+                        'nullable' => false
+                    ],
+                    'Last Name'
+                )->addColumn(
+                    'email',
+                    \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                    255,
+                    [
+                        'nullable' => false
+                    ],
+                    'E-Mail Address'
+                )->addColumn(
+                    'status',
+                    \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                    255,
+                    [
+                        'nullable' => false,
+                        'default' => 'pending'
+                    ],
+                    'Status'
+                )->addColumn(
+                    'message',
+                    \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                    '64k',
+                    [
+                        'unsigned' => true,
+                        'nullable' => false
+                    ],
+                    'Subscription notes'
+                )->addIndex(
+                    $installer->getIdxName('buhoo_subscription', ['email']),
+                    ['email']
+                )->setComment('Table subscription');
+    
+                $installer->getConnection()->createTable($table);
+    
+                $installer->endSetup();
+            }
+        }
+    }
+    
+    ```
+   
+    > **NOTA:** La version que se menciona al inicio de este archivo hace relación con la version que esta en el archivo **/app/code/Buhoo/ModuloBasico/etc/module.xml** que deberia verse asi:
+       
+    ```xml
+        <?xml version="1.0"?>
+        <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+            <module name="Buhoo_ModuloBasico" setup_version="1.0.0">
+                <sequence>
+                    <module name="Magento_Backend" />
+                </sequence>
+            </module>
+        </config>
+    ```
+
+4. Ahora vamos a proceder con el modelo, para eso, vamos a crear un directorio y una estructura de clases
+
+    ```shell
+    # Creamos el directorio del modelo
+    $ mkdir app/code/buhoo/ModuloBasico/Model
+    
+    # Creamos la Clase del Modelo
+    $ touch app/code/buhoo/ModuloBasico/Model/Subscription.php
+    
+    # Creamos ahora el directorio del recurso
+    $ mkdir app/code/buhoo/ModuloBasico/Model/ResourceModel
+    
+    # Ahora creamos el recurso dentro del directorio que creamos, y debe tener exactamente el mismo nombre del modelo
+    $ touch app/code/buhoo/ModuloBasico/Model/ResourceModel/Subscription.php
+    
+    # Ahora creamos el directorio para colocar nuestra clase de Coleccion, y debe tener exactamente el mismo nombre del modelo
+    $ mkdir app/code/buhoo/ModuloBasico/Model/ResourceModel/Subscription
+    
+    # Y ahora creamos nuestra clase de Coleccion
+    $ touch app/code/buhoo/ModuloBasico/Model/ResourceModel/Subscription/Collection.php
+    ```
+
+    > Esta estructura de clases nos permite generar una tabla personalizada en nuestro proyecto, cuando vamos a utilizar tablas nativas de Magento, simplemente. 
+   > haremos la inyeccion de dependencias de lo que necesitemos.
+   > Con esta estructura, nosotros podremos generar el **CRUD** de esta tabla personalizada que hemos creado.
+
+5. Ahora vamos a colocar el codigo en cada una de estas clases, y vamos a iniciar con el modelo como tal
+
+   - **/app/code/buhoo/ModuloBasico/Model/Subscription.php**
+
+    ```php
+    <?php
+    
+    namespace Buhoo\ModuloBasico\Model;
+    
+    class Subscription extends \Magento\Framework\Model\AbstractModel
+    {
+        const STATUS_PENDING = 'pending';
+        const STATUS_APPROVED = 'approved';
+        const STATUS_DECLINED = 'declined';
+    
+        public function __construct(
+            \Magento\Framework\Model\Context $context,
+            \Magento\Framework\Registry $registry,
+            \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
+            \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
+            array $data = [])
+        {
+            parent::__construct($context, $registry, $resource, $resourceCollection, $data);
+        }
+    
+        public function _construct()
+        {
+            $this->_init('Buhoo\ModuloBasico\Model\ResourceModel\Subscription');
+        }
+    }
+    ```
+
+6. La siguiente clase que vamos a completar es la clase **Subscription** del **ResourceModel**
+
+  - **/app/code/buhoo/ModuloBasico/Model/ResourceModel/Subscription.php**
+    ```php
+    <?php
+    
+    namespace Buhoo\ModuloBasico\Model\ResourceModel;
+    
+    class Subscription extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
+    {
+    
+        protected function _construct()
+        {
+            $this->_init('buhoo_subscription', 'subscription_id'); // Nombre de la tabla, identificador de la tabla
+        }
+    }
+    ```
+
+7. Por último. vamos a codificar la clase de Coleccion
+
+   - **/app/code/buhoo/ModuloBasico/Model/ResourceModel/Subscription/Collection.php**
+    ```php
+    <?php
+    
+    namespace Buhoo\ModuloBasico\Model\ResourceModel\Subscription;
+    
+    class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
+    {
+        public function _construct()
+        {
+            $this->_init('Buhoo\ModuloBasico\Model\Subscription', 'Buhoo\ModuloBasico\Model\ResourceModel\Subscription'); // clase del modelo - clase del recurso
+        }
+    }
+    ```
+   
+8. Antes de desplegar nuestros cambios, tenemos que hacer un pequeño cambio en las versiones del m&oacute;dulo, porque en nuestra clase de **UpgradeSchema.php**, en nuestro **module.xml** y en la BBDD en la tabla **setup_module** se encuentra la misma version, entonces el sistema no va a encontrar diferencias, por lo cual no va a hacer nada, no va a crear nuestra tabla, por lo que debemos colocar una nueva version tanto en el **module.xml** como en el **UpgradeSchema.php**
+
+   - **/app/code/buhoo/ModuloBasico/Setup/UpgradeSchema.php**
+    ```php
+    ...
+    if(version_compare($context->getVersion(), '1.0.1') < 0){
+    ...
+    }
+    ```
+   
+    - **/app/code/Buhoo/ModuloBasico/etc/module.xml**
+    ```xml
+    ...
+    <module name="Buhoo_ModuloBasico" setup_version="1.0.1">
+    ...
+    ```
+   
+9. Ahora si estamos listos para hacer el despliegue de nuestros cambios y que la configuraci&oacute;n quede implementada en nuestro proyecto.
+
+```shell
+$ php bin/magento setup:upgrade 
+$ php bin/magento setup:static-content:deploy -f
+```
