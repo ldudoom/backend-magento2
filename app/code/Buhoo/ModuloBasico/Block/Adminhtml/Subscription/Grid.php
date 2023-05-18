@@ -39,4 +39,72 @@ class Grid extends Extended
         $this->setCollection($this->_subscriptionCollection);
         return parent::_prepareCollection();
     }
+
+    /**
+     * Prepare columns
+     *
+     * @return $this
+     */
+    protected function _prepareColumns()
+    {
+        $this->addColumn(
+            'subscription_id',
+            [
+                'header' => __('ID'),
+                'index' => 'subscription_id'
+            ]
+        );
+
+        $this->addColumn(
+            'firstname',
+            [
+                'header' => __('FIRSTNAME'),
+                'index' => 'firstname'
+            ]
+        );
+
+        $this->addColumn(
+            'lastname',
+            [
+                'header' => __('LASTNAME'),
+                'index' => 'lastname'
+            ]
+        );
+
+        $this->addColumn(
+            'email',
+            [
+                'header' => __('EMAIL'),
+                'index' => 'email'
+            ]
+        );
+
+        $this->addColumn(
+            'status',
+            [
+                'header' => __('STATUS'),
+                'index' => 'status',
+                'frame_callback' => [$this, 'decorateStatus']
+            ]
+        );
+
+        return $this;
+    }
+
+    public function decorateStatus($value): string
+    {
+        $class = '';
+        switch ($value){
+            case 'pending':
+                $class = 'grid-severity-minor';
+                break;
+            case 'approved':
+                $class = 'grid-severity-notice';
+                break;
+            case 'declined':
+                $class = 'grid-severity-critical';
+                break;
+        }
+        return '<span class="' . $class . '"><span>' . $value . '</span></span>';
+    }
 }
